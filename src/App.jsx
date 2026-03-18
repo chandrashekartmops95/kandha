@@ -155,6 +155,9 @@ const featuredArt = [
 
 function App() {
   const [openProject, setOpenProject] = useState(projects[0].title);
+  const [selectedImageByProject, setSelectedImageByProject] = useState(
+    Object.fromEntries(projects.map((project) => [project.title, 0])),
+  );
 
   return (
     <div className="page-shell">
@@ -279,13 +282,13 @@ function App() {
                       <p>{openProject === project.title ? "Close project details" : "Open project details"}</p>
                     </div>
                   </div>
-                  <div className="project-preview">
-                    <img
-                      className="project-preview-image"
-                      src={project.images[0]}
-                      alt={`${project.title} featured portfolio visual`}
-                      loading="lazy"
-                    />
+                    <div className="project-preview">
+                      <img
+                        className="project-preview-image"
+                        src={project.images[selectedImageByProject[project.title] ?? 0]}
+                        alt={`${project.title} featured portfolio visual`}
+                        loading="lazy"
+                      />
                     <span className="project-preview-pill">
                       {openProject === project.title ? "Expanded view" : "View case study"}
                     </span>
@@ -312,20 +315,38 @@ function App() {
                     <div className="project-visuals project-visuals-open">
                       <img
                         className="project-main-image"
-                        src={project.images[0]}
+                        src={project.images[selectedImageByProject[project.title] ?? 0]}
                         alt={`${project.title} featured portfolio visual`}
                         loading="lazy"
                       />
-                      <div className="project-thumbs">
-                        {project.images.slice(1).map((image) => (
-                          <img
-                            key={image}
-                            src={image}
-                            alt={`${project.title} portfolio visual`}
-                            loading="lazy"
-                          />
-                        ))}
-                      </div>
+                      {project.images.length > 1 ? (
+                        <div className="project-thumbs project-thumbs-clickable">
+                          {project.images.map((image, index) => (
+                            <button
+                              type="button"
+                              key={image}
+                              className={`project-thumb-button ${
+                                (selectedImageByProject[project.title] ?? 0) === index
+                                  ? "is-active"
+                                  : ""
+                              }`}
+                              onClick={() =>
+                                setSelectedImageByProject((current) => ({
+                                  ...current,
+                                  [project.title]: index,
+                                }))
+                              }
+                              aria-label={`View ${project.title} image ${index + 1}`}
+                            >
+                              <img
+                                src={image}
+                                alt={`${project.title} portfolio visual ${index + 1}`}
+                                loading="lazy"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 ) : null}

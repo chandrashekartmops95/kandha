@@ -642,7 +642,6 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 12rem;
   gap: 0.8rem;
   min-height: 24rem;
 }
@@ -664,7 +663,35 @@ main {
 .project-thumbs {
   display: grid;
   gap: 0.8rem;
-  grid-auto-rows: 1fr;
+}
+
+.project-thumbs-clickable {
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+}
+
+.project-thumb-button {
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, opacity 160ms ease;
+}
+
+.project-thumb-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.project-thumb-button.is-active {
+  border-color: rgba(255, 196, 103, 0.65);
+  box-shadow: 0 0 0 1px rgba(255, 196, 103, 0.3);
+}
+
+.project-thumb-button img {
+  aspect-ratio: 1.15 / 1;
+  object-fit: cover;
 }
 
 .project-visuals-open .project-main-image {
@@ -835,10 +862,6 @@ main {
   .project-expand,
   .project-visuals {
     grid-template-columns: 1fr;
-  }
-
-  .project-thumbs {
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   }
 
   .hero {
