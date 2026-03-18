@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const highlights = [
   "Brand worlds",
   "Packaging systems",
@@ -41,6 +43,9 @@ const projects = [
     brief: "Reimagined the full product range with a system that brings heritage, desirability, and modern shelf impact into one seamless visual language.",
     impact: "I approached packaging as both strategy and seduction, balancing heritage with a sharper, more premium presence.",
     accent: "gold",
+    details:
+      "A full-range packaging refresh designed to feel richer, more coherent, and more shelf-ready while preserving the familiarity of a heritage brand.",
+    deliverables: ["Range redesign", "Packaging system", "Shelf presence", "Visual hierarchy"],
     images: [
       "/portfolio-pages/page-07.jpg",
       "/portfolio-pages/page-08.jpg",
@@ -56,6 +61,9 @@ const projects = [
     brief: "Designed catalogs and key visuals with a jewel-like sense of rhythm, detail, and restraint that lets luxury breathe.",
     impact: "I wanted the work to feel iconic without relying on visual excess, letting detail, rhythm, and restraint do the heavy lifting.",
     accent: "rose",
+    details:
+      "Luxury communication built around mood, precision, and editorial pacing, with attention to how product, texture, and light work together.",
+    deliverables: ["Catalog design", "Key visuals", "Luxury storytelling", "Print direction"],
     images: [
       "/portfolio-pages/page-12.jpg",
     ],
@@ -67,6 +75,9 @@ const projects = [
     brief: "Created customer-facing communication that feels energetic, graphic, and unmistakably in motion.",
     impact: "I translated brand energy into clean, conversion-smart visual culture with clarity and momentum.",
     accent: "ice",
+    details:
+      "A communication system that brings movement and confidence into every frame while keeping the messaging immediate and product-led.",
+    deliverables: ["B2C communication", "Catalog pieces", "Brand energy", "Retail touchpoints"],
     images: [
       "/portfolio-pages/page-13.jpg",
       "/portfolio-pages/page-21.jpg",
@@ -79,6 +90,9 @@ const projects = [
     brief: "Built promotional advertising with instant readability, appetite, and commercial punch.",
     impact: "I move fast when the format demands it, without letting the work slip into anything ordinary.",
     accent: "mint",
+    details:
+      "Fast-moving ad work designed to feel appetizing, direct, and impossible to miss, while still staying visually disciplined.",
+    deliverables: ["Promotional ads", "Retail graphics", "Brand consistency", "Campaign rollout"],
     images: [
       "/portfolio-pages/page-14.jpg",
       "/portfolio-pages/page-15.jpg",
@@ -93,6 +107,9 @@ const projects = [
     brief: "Ran a large-scale sale campaign with commanding hierarchy, sharp communication, and real visual stamina.",
     impact: "This project reflects how I build high-pressure design systems that still feel intentional and sharp at scale.",
     accent: "sky",
+    details:
+      "A campaign ecosystem built for volume and velocity, where every banner, app touchpoint, and promo asset had to stay clear and compelling.",
+    deliverables: ["Sale campaign", "E-commerce assets", "Digital rollout", "Scaled visual system"],
     images: [
       "/portfolio-pages/page-18.jpg",
       "/portfolio-pages/page-19.jpg",
@@ -137,6 +154,8 @@ const featuredArt = [
 ];
 
 function App() {
+  const [openProject, setOpenProject] = useState(projects[0].title);
+
   return (
     <div className="page-shell">
       <div className="ambient ambient-a" />
@@ -234,27 +253,82 @@ function App() {
           </div>
           <div className="project-grid project-grid-rich">
             {projects.map((project) => (
-              <article className={`project-card accent-${project.accent}`} key={project.title}>
-                <div className="project-copy">
-                  <div className="project-meta">
-                    <span>{project.number}</span>
-                    <p>{project.category}</p>
+              <article
+                className={`project-card accent-${project.accent} ${openProject === project.title ? "is-open" : ""}`}
+                key={project.title}
+              >
+                <button
+                  type="button"
+                  className="project-toggle"
+                  onClick={() =>
+                    setOpenProject((current) =>
+                      current === project.title ? "" : project.title,
+                    )
+                  }
+                  aria-expanded={openProject === project.title}
+                >
+                  <div className="project-copy">
+                    <div className="project-meta">
+                      <span>{project.number}</span>
+                      <p>{project.category}</p>
+                    </div>
+                    <h3>{project.title}</h3>
+                    <p>{project.brief}</p>
+                    <div className="project-impact">
+                      <span>Click to expand</span>
+                      <p>{openProject === project.title ? "Close project details" : "Open project details"}</p>
+                    </div>
                   </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.brief}</p>
-                  <div className="project-impact">
-                    <span>What I brought to it</span>
-                    <p>{project.impact}</p>
+                  <div className="project-preview">
+                    <img
+                      className="project-preview-image"
+                      src={project.images[0]}
+                      alt={`${project.title} featured portfolio visual`}
+                      loading="lazy"
+                    />
+                    <span className="project-preview-pill">
+                      {openProject === project.title ? "Expanded view" : "View case study"}
+                    </span>
                   </div>
-                </div>
-                <div className="project-visuals">
-                  <img className="project-main-image" src={project.images[0]} alt={`${project.title} featured portfolio visual`} loading="lazy" />
-                  <div className="project-thumbs">
-                    {project.images.slice(1).map((image) => (
-                      <img key={image} src={image} alt={`${project.title} portfolio visual`} loading="lazy" />
-                    ))}
+                </button>
+
+                {openProject === project.title ? (
+                  <div className="project-expand">
+                    <div className="project-expand-copy">
+                      <p className="project-expand-label">Inside the project</p>
+                      <p className="project-expand-text">{project.details}</p>
+                      <div className="project-deliverables">
+                        {project.deliverables.map((item) => (
+                          <span className="chip project-chip" key={item}>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="project-impact project-impact-open">
+                        <span>What I brought to it</span>
+                        <p>{project.impact}</p>
+                      </div>
+                    </div>
+                    <div className="project-visuals project-visuals-open">
+                      <img
+                        className="project-main-image"
+                        src={project.images[0]}
+                        alt={`${project.title} featured portfolio visual`}
+                        loading="lazy"
+                      />
+                      <div className="project-thumbs">
+                        {project.images.slice(1).map((image) => (
+                          <img
+                            key={image}
+                            src={image}
+                            alt={`${project.title} portfolio visual`}
+                            loading="lazy"
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </article>
             ))}
           </div>
