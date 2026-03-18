@@ -135,9 +135,9 @@ main {
 .education-strip h2,
 .contact-section h2 {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
-  line-height: 0.95;
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 
 .hero h1 {
@@ -266,8 +266,8 @@ main {
 .stage-card strong {
   font-size: 1.35rem;
   line-height: 1.2;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .stage-main {
@@ -499,8 +499,9 @@ main {
 }
 
 .project-meta span {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
   color: rgba(247, 241, 232, 0.5);
 }
 
@@ -611,8 +612,9 @@ main {
   display: inline-flex;
   margin-bottom: 3rem;
   color: rgba(247, 241, 232, 0.48);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
 }
 
 .process-step p {
