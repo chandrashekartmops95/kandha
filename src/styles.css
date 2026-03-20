@@ -115,9 +115,9 @@ main {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 2rem;
-  min-height: 92vh;
+  min-height: 76vh;
   align-items: center;
-  padding: 4rem 0 2rem;
+  padding: 2.5rem 0 1.5rem;
 }
 
 .eyebrow,
@@ -343,7 +343,7 @@ main {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
   gap: 1rem;
-  padding: 2rem 0 5rem;
+  padding: 1rem 0 2.5rem;
 }
 
 .art-strip {
@@ -423,7 +423,7 @@ main {
 .story-section,
 .craft-section,
 .process-section {
-  padding: 2rem 0 5rem;
+  padding: 1rem 0 2.5rem;
 }
 
 .project-grid {
@@ -922,7 +922,7 @@ main {
 
 .contact-section {
   padding: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 

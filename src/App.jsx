@@ -13,33 +13,6 @@ const highlights = [
   "Spatial thinking",
 ];
 
-const experience = [
-  {
-    year: "Oct 2024 - Present",
-    role: "Creative Designer",
-    company: "ITC Limited",
-    note: "I shape brand expression with precision, taste, and the kind of visual intelligence that makes a large brand feel newly alive.",
-  },
-  {
-    year: "Jan 2023 - Aug 2024",
-    role: "Creative Designer",
-    company: "MullenLowe Lintas",
-    note: "I created campaign systems, retail stories, and launch visuals that turned strategy into imagery people could feel instantly.",
-  },
-  {
-    year: "Dec 2020 - Sep 2021",
-    role: "Junior Creative Designer",
-    company: "Mass Designs",
-    note: "This role sharpened the compositional discipline and design judgment that give my work both elegance and force.",
-  },
-  {
-    year: "Dec 2019 - Mar 2020",
-    role: "Design Intern",
-    company: "Internship Experience",
-    note: "This is where I developed an early instinct for form, storytelling, and the obsessive craft that now defines my visual language.",
-  },
-];
-
 const projects = [
   {
     number: "01",
@@ -124,29 +97,6 @@ const tools = [
   "After Effects",
   "Premiere Pro",
   "Adobe XD",
-];
-
-const practices = [
-  "Sketching",
-  "Painting",
-  "Photography",
-  "2D / 3D drawing",
-  "Sculpture",
-  "Art direction",
-];
-
-const process = [
-  "Inspiration + research",
-  "Ideation + concept development",
-  "Design execution",
-  "Presentation",
-  "Finalization + delivery",
-];
-
-const featuredArt = [
-  "/portfolio-pages/page-04.jpg",
-  "/portfolio-pages/page-05.jpg",
-  "/portfolio-pages/page-06.jpg",
 ];
 
 const caseStudyGoals = [
@@ -239,11 +189,11 @@ function HomePage({
         <div className="hero-copy">
           <p className="eyebrow">UI/UX Focus / Bengaluru / Brand x Digital x Interaction</p>
           <h1>
-            UI/UX is my focus.
-            <span> Brand, packaging, and creative design are the foundation that sharpened my edge as a world-class brand designer.</span>
+            I design UI/UX experiences
+            <span> that turn complexity into clarity, trust, and business impact.</span>
           </h1>
           <p className="hero-text">
-            From packaging that drives Rs crores in sales to digital experiences that convert users, I design work that is strategic, intuitive, and built to perform in the real world.
+            From conversion-focused product flows to high-trust visual systems, I design interfaces that feel intuitive, premium, and built to move users to action.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#work">
@@ -297,18 +247,10 @@ function HomePage({
         </article>
       </section>
 
-      <section className="art-strip">
-        {featuredArt.map((image, index) => (
-          <figure className={`art-frame art-${index + 1}`} key={image}>
-            <img src={image} alt={`Portfolio artwork preview ${index + 1}`} loading="lazy" />
-          </figure>
-        ))}
-      </section>
-
       <section className="work-section" id="work">
         <div className="section-head">
           <p className="section-kicker">Selected work</p>
-          <h2>Work that doesn&apos;t just communicate. It transforms the temperature of a brand.</h2>
+          <h2>Selected work across UX, digital experience, and brand systems.</h2>
         </div>
         <div className="project-grid project-grid-rich">
           {projects.map((project) => {
@@ -408,76 +350,6 @@ function HomePage({
               </article>
             );
           })}
-        </div>
-      </section>
-
-      <section className="story-section" id="story">
-        <div className="section-head story-head">
-          <p className="section-kicker">Trajectory</p>
-          <h2>A career shaped in demanding rooms where taste, speed, and imagination all had to coexist.</h2>
-        </div>
-        <div className="timeline">
-          {experience.map((item) => (
-            <article className="timeline-item" key={`${item.company}-${item.year}`}>
-              <p className="timeline-year">{item.year}</p>
-              <h3>{item.role}</h3>
-              <p className="timeline-company">{item.company}</p>
-              <p>{item.note}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="craft-section">
-        <div className="craft-panel">
-          <p className="section-kicker">Toolbox</p>
-          <h2>Technical fluency, artistic muscle, and an eye that misses nothing.</h2>
-          <div className="chip-group">
-            {tools.map((tool) => (
-              <span className="chip" key={tool}>
-                {tool}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="craft-panel">
-          <p className="section-kicker">Studio practice</p>
-          <h2>My analog practice is what gives the digital work its soul.</h2>
-          <div className="chip-group">
-            {practices.map((item) => (
-              <span className="chip alt" key={item}>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="process-section">
-        <div className="section-head">
-          <p className="section-kicker">Process</p>
-          <h2>Behind the beauty is rigor. Behind the rigor is real creative instinct.</h2>
-        </div>
-        <div className="process-rail">
-          {process.map((step, index) => (
-            <article className="process-step" key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{step}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="education-strip">
-        <div>
-          <p className="section-kicker">Education</p>
-          <h2>Bachelor of Visual Arts</h2>
-          <p>Karnataka Chitrakala Parishath, 2018 - 2022</p>
-        </div>
-        <div>
-          <p className="section-kicker">Earlier foundation</p>
-          <h2>Commerce (S.E.B.A)</h2>
-          <p>M.E.S Kishor Kendra, 2016 - 2018</p>
         </div>
       </section>
 
@@ -678,7 +550,6 @@ function App() {
           ) : (
             <>
               <a href="#work">Work</a>
-              <a href="#story">Story</a>
               <a href="#contact">Contact</a>
             </>
           )}
