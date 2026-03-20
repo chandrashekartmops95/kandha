@@ -205,11 +205,11 @@ function App() {
             <img className="hero-stage-image hero-image-b" src="/portfolio-pages/page-12.jpg" alt="" />
             <div className="stage-card stage-main">
               <span>2025 Portfolio</span>
-              <strong>Creative systems with fashion instincts and campaign muscle.</strong>
+              <strong>Brand &amp; UX Designer crafting experiences that drive business impact.</strong>
             </div>
             <div className="stage-card stage-note">
               <span>Currently</span>
-              <strong>Creative Designer at ITC Limited</strong>
+              <strong>Solving problems with visual solutions</strong>
             </div>
             <div className="stage-ring" />
             <div className="stage-orbit orbit-one" />
