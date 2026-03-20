@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 const highlights = [
-  "Brand worlds",
-  "Packaging systems",
+  "Brand building",
+  "Packaging design",
   "Campaign visuals",
-  "Print stories",
+  "Human computer interaction",
+  "Design solutions",
+  "Mainline media",
+  "Digital experience",
   "Spatial thinking",
 ];
 
@@ -177,15 +180,15 @@ function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <p className="eyebrow">Creative Designer / Bengaluru / Brand x Culture x Form</p>
+            <p className="eyebrow">UI/UX Focus / Bengaluru / Brand x Digital x Interaction</p>
             <h1>
-              A creative force with
-              <span> the instincts of an artist and the precision of a world-class brand designer.</span>
+              UI/UX is my focus.
+              <span> Brand, packaging, and creative design are the foundation that sharpened my edge as a world-class brand designer.</span>
             </h1>
             <p className="hero-text">
-              I create visual worlds that feel intelligent, magnetic, and deeply authored. My work
-              moves between packaging, campaigns, print, and storytelling, always aiming to push
-              past the brief into something more memorable.
+              From packaging that drives ₹ crores in sales to digital experiences that convert
+              users, I design work that is strategic, intuitive, and built to perform in the real
+              world.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#work">
@@ -226,18 +229,18 @@ function App() {
           <article className="intro-card statement">
             <p className="section-kicker">Positioning</p>
             <p>
-              Formally trained in visual arts and sharpened by real commercial practice, I bring
-              unusual range to every brief: conceptual depth, elegant execution, and the ability to
-              make brands feel more vivid, more premium, and more memorable.
+              Formally trained in visual arts and sharpened by commercial practice, I am now
+              channeling that range into UI/UX with a strong foundation in brand building,
+              packaging design, campaigns, and visual systems.
             </p>
           </article>
           <article className="intro-card metric">
             <p className="section-kicker">Built for</p>
-            <strong>High-stakes brands, ambitious launches, and creative teams that want more than safe design.</strong>
+            <strong>High-stakes digital products, ambitious launches, and teams that care about both conversion and craft.</strong>
           </article>
           <article className="intro-card metric">
             <p className="section-kicker">Approach</p>
-            <strong>Original thinking backed by craft, composure, and an exceptional eye for what makes imagery unforgettable.</strong>
+            <strong>World-class brand designer instincts applied to UI/UX, interaction, and digital experiences that feel intuitive and high-performing.</strong>
           </article>
         </section>
 
@@ -429,9 +432,9 @@ function App() {
           <p className="section-kicker">Contact</p>
           <h2>For brands that want brilliance, memorability, and a point of view.</h2>
           <p className="contact-copy">
-            Available for full-time creative roles, collaborations, campaigns, packaging systems,
-            and visual storytelling for teams looking for brilliance, memorability, and a strong
-            point of view.
+            Available for UI/UX roles, digital experience work, brand building, packaging design,
+            and visual storytelling for teams looking for strategic clarity and a strong point of
+            view.
           </p>
           <div className="contact-links">
             <a href="mailto:work.deeksha07@gmail.com">work.deeksha07@gmail.com</a>
