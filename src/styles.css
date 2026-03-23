@@ -465,11 +465,11 @@ main {
   border-radius: 1.8rem;
   overflow: hidden;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-  --preview-pill-background: linear-gradient(135deg, #f6d69f 0%, #f0bf72 50%, #d79d49 100%);
-  --preview-pill-border: rgba(255, 235, 208, 0.46);
-  --preview-pill-text: #161114;
-  --preview-pill-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 250, 242, 0.45);
-  --preview-pill-shadow-hover: 0 22px 48px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 250, 242, 0.5);
+  --preview-pill-background: linear-gradient(180deg, rgba(20, 18, 23, 0.96), rgba(10, 10, 14, 0.98));
+  --preview-pill-border: rgba(255, 196, 103, 0.3);
+  --preview-pill-text: #f7f1e8;
+  --preview-pill-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 248, 236, 0.08);
+  --preview-pill-shadow-hover: 0 22px 48px rgba(0, 0, 0, 0.34), 0 0 0 1px rgba(255, 196, 103, 0.12), inset 0 1px 0 rgba(255, 248, 236, 0.12);
 }
 
 .project-card:hover {
@@ -501,40 +501,16 @@ main {
   background: var(--rose);
 }
 
-.accent-rose {
-  --preview-pill-background: linear-gradient(135deg, #ffcad4 0%, #ff9fb2 52%, #ea738b 100%);
-  --preview-pill-border: rgba(255, 221, 228, 0.52);
-  --preview-pill-text: #241117;
-}
-
 .accent-ice::before {
   background: var(--ice);
-}
-
-.accent-ice {
-  --preview-pill-background: linear-gradient(135deg, #f4f8ff 0%, #d8e9ff 45%, #a8c8ff 100%);
-  --preview-pill-border: rgba(236, 244, 255, 0.62);
-  --preview-pill-text: #132033;
 }
 
 .accent-mint::before {
   background: var(--mint);
 }
 
-.accent-mint {
-  --preview-pill-background: linear-gradient(135deg, #d7fff0 0%, #90f7d0 48%, #4fd3a7 100%);
-  --preview-pill-border: rgba(223, 255, 243, 0.58);
-  --preview-pill-text: #10271f;
-}
-
 .accent-sky::before {
   background: var(--sky);
-}
-
-.accent-sky {
-  --preview-pill-background: linear-gradient(135deg, #e3edff 0%, #8fb7ff 50%, #5f86dc 100%);
-  --preview-pill-border: rgba(228, 239, 255, 0.56);
-  --preview-pill-text: #12203b;
 }
 
 .project-meta,
@@ -663,6 +639,7 @@ main {
   content: "->";
   font-size: 0.72rem;
   letter-spacing: 0.08em;
+  color: var(--gold);
 }
 
 .project-card:hover .project-preview-pill,
