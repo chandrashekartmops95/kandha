@@ -139,7 +139,16 @@ const outcomes = [
   "Improved perceived trust and premium value",
 ];
 
-const caseStudyVisuals = [
+const caseStudyDesktopVisuals = [
+  {
+    label: "Subscription",
+    title: "The subscription journey leads with value before it ever asks for payment.",
+    copy:
+      "The plan comparison, duration selection, and premium cues were designed to make the upgrade feel intentional, legible, and commercially persuasive.",
+    src: "/projects/my-nikkah/pricing-flow-mobile.jpeg",
+    alt: "Subscription selection screen for the My Nikkah premium plans.",
+    layout: "full",
+  },
   {
     label: "Checkout",
     title: "A cleaner payment layer that supports the premium upgrade moment.",
@@ -159,15 +168,6 @@ const caseStudyVisuals = [
     layout: "full",
   },
   {
-    label: "Plan selection",
-    title: "The subscription story stays clear and persuasive on mobile too.",
-    copy:
-      "The mobile pricing screen keeps the tier comparison, duration choices, and premium cues legible without making the decision feel crowded.",
-    src: "/projects/my-nikkah/pricing-flow-mobile.jpeg",
-    alt: "Mobile mockup showing the My Nikkah subscription selection and pricing flow.",
-    layout: "accent",
-  },
-  {
     label: "Discovery flow",
     title: "Profile browsing designed to feel immersive and focused.",
     copy:
@@ -185,9 +185,12 @@ const caseStudyVisuals = [
     alt: "Laptop mockup showing a female profile with a profile completion prompt in My Nikkah.",
     layout: "standard",
   },
+];
+
+const caseStudyMobileVisuals = [
   {
     label: "Mobile system",
-    title: "The same premium language carried into mobile touchpoints.",
+    title: "The same premium language carried into the mobile version.",
     copy:
       "Core brand cues, content hierarchy, and profile discovery patterns were adapted for smaller screens without losing the sense of polish.",
     src: "/projects/my-nikkah/mobile-system.jpeg",
@@ -466,22 +469,46 @@ function CaseStudyPage() {
       <section className="case-visual-gallery">
         <div className="section-head">
           <p className="section-kicker">Visual rollout</p>
-          <h2>Responsive premium screens across landing, discovery, and checkout.</h2>
+          <h2>Desktop and mobile versions across subscription, discovery, and checkout.</h2>
           <p className="case-gallery-lead">
             These deliverables show how the redesign extended beyond pricing into the surrounding product experience, creating a more cohesive and conversion-ready system.
           </p>
         </div>
-        <div className="case-showcase-grid">
-          {caseStudyVisuals.map((visual) => (
-            <figure className={`case-media-card case-media-${visual.layout}`} key={visual.title}>
-              <img src={visual.src} alt={visual.alt} loading="lazy" />
-              <figcaption>
-                <span className="case-media-label">{visual.label}</span>
-                <h3>{visual.title}</h3>
-                <p>{visual.copy}</p>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="case-visual-group">
+          <div className="case-visual-group-head">
+            <p className="section-kicker">Desktop</p>
+            <h3>Desktop version</h3>
+          </div>
+          <div className="case-showcase-grid">
+            {caseStudyDesktopVisuals.map((visual) => (
+              <figure className={`case-media-card case-media-${visual.layout}`} key={visual.title}>
+                <img src={visual.src} alt={visual.alt} loading="lazy" />
+                <figcaption>
+                  <span className="case-media-label">{visual.label}</span>
+                  <h3>{visual.title}</h3>
+                  <p>{visual.copy}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+        <div className="case-visual-group">
+          <div className="case-visual-group-head">
+            <p className="section-kicker">Mobile</p>
+            <h3>Mobile version</h3>
+          </div>
+          <div className="case-showcase-grid">
+            {caseStudyMobileVisuals.map((visual) => (
+              <figure className={`case-media-card case-media-${visual.layout}`} key={visual.title}>
+                <img src={visual.src} alt={visual.alt} loading="lazy" />
+                <figcaption>
+                  <span className="case-media-label">{visual.label}</span>
+                  <h3>{visual.title}</h3>
+                  <p>{visual.copy}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

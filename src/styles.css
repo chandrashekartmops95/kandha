@@ -1101,6 +1101,27 @@ main {
   margin-bottom: 1.4rem;
 }
 
+.case-visual-group + .case-visual-group {
+  margin-top: 2.2rem;
+}
+
+.case-visual-group-head {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.case-visual-group-head .section-kicker,
+.case-visual-group-head h3 {
+  margin: 0;
+}
+
+.case-visual-group-head h3 {
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
 .case-gallery-lead {
   max-width: 40rem;
   margin: 0;
@@ -1572,6 +1593,10 @@ main {
 
   .case-visual-gallery {
     padding-top: 2.2rem;
+  }
+
+  .case-visual-group + .case-visual-group {
+    margin-top: 1.8rem;
   }
 
   .case-media-card figcaption {
