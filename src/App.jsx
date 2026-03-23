@@ -141,6 +141,15 @@ const outcomes = [
 
 const caseStudyVisuals = [
   {
+    label: "Checkout",
+    title: "A cleaner payment layer that supports the premium upgrade moment.",
+    copy:
+      "Payment options, form fields, and order summary were structured to feel calmer and more trustworthy at the point of conversion.",
+    src: "/projects/my-nikkah/payment-checkout.jpeg",
+    alt: "Payment modal for the My Nikkah subscription checkout flow.",
+    layout: "full",
+  },
+  {
     label: "Desktop landing",
     title: "A premium first impression that makes the product feel worth paying for.",
     copy:
@@ -150,12 +159,12 @@ const caseStudyVisuals = [
     layout: "hero",
   },
   {
-    label: "Mobile system",
-    title: "The same premium language carried into mobile touchpoints.",
+    label: "Plan selection",
+    title: "The subscription story stays clear and persuasive on mobile too.",
     copy:
-      "Core brand cues, content hierarchy, and profile discovery patterns were adapted for smaller screens without losing the sense of polish.",
-    src: "/projects/my-nikkah/mobile-system.jpeg",
-    alt: "Mobile mockups showing the My Nikkah experience across several app screens.",
+      "The mobile pricing screen keeps the tier comparison, duration choices, and premium cues legible without making the decision feel crowded.",
+    src: "/projects/my-nikkah/pricing-flow-mobile.jpeg",
+    alt: "Mobile mockup showing the My Nikkah subscription selection and pricing flow.",
     layout: "accent",
   },
   {
@@ -177,12 +186,12 @@ const caseStudyVisuals = [
     layout: "standard",
   },
   {
-    label: "Checkout",
-    title: "A cleaner payment layer that supports the premium upgrade moment.",
+    label: "Mobile system",
+    title: "The same premium language carried into mobile touchpoints.",
     copy:
-      "Payment options, form fields, and order summary were structured to feel calmer and more trustworthy at the point of conversion.",
-    src: "/projects/my-nikkah/payment-checkout.jpeg",
-    alt: "Payment modal for the My Nikkah subscription checkout flow.",
+      "Core brand cues, content hierarchy, and profile discovery patterns were adapted for smaller screens without losing the sense of polish.",
+    src: "/projects/my-nikkah/mobile-system.jpeg",
+    alt: "Mobile mockups showing the My Nikkah experience across several app screens.",
     layout: "full",
   },
 ];
