@@ -151,7 +151,7 @@ main {
 }
 
 .hero-text,
-.statement p,
+.intro-card-copy,
 .timeline-item p,
 .project-card p,
 .contact-copy,
@@ -341,7 +341,7 @@ main {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   padding: 1rem 0 2.5rem;
 }
@@ -399,13 +399,33 @@ main {
 }
 
 .intro-card {
-  padding: 1.4rem;
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  min-height: 100%;
+  padding: 1.5rem;
 }
 
-.metric strong {
-  display: block;
-  font-size: 1.35rem;
-  line-height: 1.35;
+.intro-card .section-kicker,
+.intro-card-title,
+.intro-card-copy {
+  margin: 0;
+}
+
+.intro-card-title {
+  max-width: 12ch;
+  font-size: clamp(1.55rem, 2vw, 2.05rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.intro-card-copy {
+  max-width: 30ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-wrap: pretty;
 }
 
 .section-head {
@@ -1275,11 +1295,16 @@ main {
   }
 
   .intro-card {
-    padding: 1.1rem;
+    gap: 0.8rem;
+    padding: 1.15rem;
   }
 
-  .metric strong {
-    font-size: 1.1rem;
+  .intro-card-title {
+    font-size: 1.45rem;
+  }
+
+  .intro-card-copy {
+    font-size: 0.96rem;
   }
 
   .section-head {

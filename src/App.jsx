@@ -13,6 +13,25 @@ const highlights = [
   "Spatial thinking",
 ];
 
+const introCards = [
+  {
+    kicker: "Positioning",
+    title: "Visual problem solving with brand depth.",
+    copy:
+      "Formally trained in visual arts and sharpened by commercial practice, I approach UI/UX through brand thinking, interaction clarity, and problem solving.",
+  },
+  {
+    kicker: "Built for",
+    title: "High-stakes products and ambitious launches.",
+    copy: "I work best with teams that care about business impact as much as craft.",
+  },
+  {
+    kicker: "Approach",
+    title: "Strategic UX built to convert.",
+    copy: "Brand and UX thinking applied to digital experiences that feel intuitive, deliberate, and commercially effective.",
+  },
+];
+
 const projects = [
   {
     number: "01",
@@ -231,20 +250,13 @@ function HomePage({
       </section>
 
       <section className="intro-grid">
-        <article className="intro-card statement">
-          <p className="section-kicker">Positioning</p>
-          <p>
-            Formally trained in visual arts and sharpened by commercial practice, I approach UI/UX through brand thinking, interaction clarity, and problem solving. Solving problems with visual solutions is at the core of how I design.
-          </p>
-        </article>
-        <article className="intro-card metric">
-          <p className="section-kicker">Built for</p>
-          <strong>High-stakes digital products, ambitious launches, and teams that care about business impact as much as craft.</strong>
-        </article>
-        <article className="intro-card metric">
-          <p className="section-kicker">Approach</p>
-          <strong>Brand and UX thinking applied to digital experiences that feel intuitive, strategic, and built to convert.</strong>
-        </article>
+        {introCards.map((card) => (
+          <article className="intro-card" key={card.kicker}>
+            <p className="section-kicker">{card.kicker}</p>
+            <h3 className="intro-card-title">{card.title}</h3>
+            <p className="intro-card-copy">{card.copy}</p>
+          </article>
+        ))}
       </section>
 
       <section className="work-section" id="work">
