@@ -189,11 +189,11 @@ function HomePage({
         <div className="hero-copy">
           <p className="eyebrow">Brand x Digital x Interaction</p>
           <h1>
-            I design UI/UX
-            <span> that makes products clearer, sharper, and more valuable.</span>
+            Brand &amp; UX designer
+            <span> crafting experiences that drive business impact and solve problems.</span>
           </h1>
           <p className="hero-text">
-            From conversion-focused product flows to high-trust visual systems, I design interfaces that feel intuitive, premium, and built to move users to action.
+            From packaging that drives crores in sales to digital experiences designed to convert users.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#work">
