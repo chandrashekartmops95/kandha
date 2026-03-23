@@ -156,7 +156,7 @@ const caseStudyVisuals = [
       "The landing experience leans into dark luxury cues, stronger imagery, and clearer calls to action so the product feels credible before users ever reach pricing.",
     src: "/projects/my-nikkah/landing-desktop.jpeg",
     alt: "Laptop mockup showing the My Nikkah desktop landing page.",
-    layout: "hero",
+    layout: "full",
   },
   {
     label: "Plan selection",
