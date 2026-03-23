@@ -187,7 +187,7 @@ function HomePage({
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">UI/UX Focus / Bengaluru / Brand x Digital x Interaction</p>
+          <p className="eyebrow">Brand x Digital x Interaction</p>
           <h1>
             I design UI/UX
             <span> that makes products clearer, sharper, and more valuable.</span>
