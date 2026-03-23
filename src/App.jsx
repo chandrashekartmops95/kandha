@@ -132,18 +132,66 @@ const caseStudyInsights = [
   "Premium design increases perceived credibility",
 ];
 
-const uxDecisions = [
-  "Used choice architecture to guide users instead of overwhelming them",
-  "Applied visual hierarchy to influence revenue-driving behavior",
-  "Balanced emotional design in a marriage context with conversion goals",
-  "Designed for trust, not just usability",
-];
-
 const outcomes = [
   "Increase in plan selection clarity",
   "Higher click-through on the Gold plan through visual hierarchy",
   "Reduced drop-offs at the pricing stage",
   "Improved perceived trust and premium value",
+];
+
+const caseStudyVisuals = [
+  {
+    label: "Desktop landing",
+    title: "A premium first impression that makes the product feel worth paying for.",
+    copy:
+      "The landing experience leans into dark luxury cues, stronger imagery, and clearer calls to action so the product feels credible before users ever reach pricing.",
+    src: "/projects/my-nikkah/landing-desktop.jpeg",
+    alt: "Laptop mockup showing the My Nikkah desktop landing page.",
+    layout: "hero",
+  },
+  {
+    label: "Mobile system",
+    title: "The same premium language carried into mobile touchpoints.",
+    copy:
+      "Core brand cues, content hierarchy, and profile discovery patterns were adapted for smaller screens without losing the sense of polish.",
+    src: "/projects/my-nikkah/mobile-system.jpeg",
+    alt: "Mobile mockups showing the My Nikkah experience across several app screens.",
+    layout: "accent",
+  },
+  {
+    label: "Discovery flow",
+    title: "Profile browsing designed to feel immersive and focused.",
+    copy:
+      "The discovery surface gives more room to the profile itself while keeping actions and utilities secondary until they are needed.",
+    src: "/projects/my-nikkah/discover-profile-man.jpeg",
+    alt: "Laptop mockup showing a male profile in the My Nikkah discovery experience.",
+    layout: "standard",
+  },
+  {
+    label: "Profile completion",
+    title: "Prompts that encourage users to build trust and complete their profile.",
+    copy:
+      "Completion nudges were framed as value-building moments, helping users improve match quality while increasing product confidence.",
+    src: "/projects/my-nikkah/discover-profile-woman.jpeg",
+    alt: "Laptop mockup showing a female profile with a profile completion prompt in My Nikkah.",
+    layout: "standard",
+  },
+  {
+    label: "Checkout",
+    title: "A cleaner payment layer that supports the premium upgrade moment.",
+    copy:
+      "Payment options, form fields, and order summary were structured to feel calmer and more trustworthy at the point of conversion.",
+    src: "/projects/my-nikkah/payment-checkout.jpeg",
+    alt: "Payment modal for the My Nikkah subscription checkout flow.",
+    layout: "full",
+  },
+];
+
+const uxDecisions = [
+  "Used choice architecture to guide users instead of overwhelming them",
+  "Applied visual hierarchy to influence revenue-driving behavior",
+  "Balanced emotional design in a marriage context with conversion goals",
+  "Designed for trust, not just usability",
 ];
 
 function navigateTo(path) {
@@ -404,6 +452,28 @@ function CaseStudyPage() {
           </p>
         </div>
         <MyNikkahPreview />
+      </section>
+
+      <section className="case-visual-gallery">
+        <div className="section-head">
+          <p className="section-kicker">Visual rollout</p>
+          <h2>Responsive premium screens across landing, discovery, and checkout.</h2>
+          <p className="case-gallery-lead">
+            These deliverables show how the redesign extended beyond pricing into the surrounding product experience, creating a more cohesive and conversion-ready system.
+          </p>
+        </div>
+        <div className="case-showcase-grid">
+          {caseStudyVisuals.map((visual) => (
+            <figure className={`case-media-card case-media-${visual.layout}`} key={visual.title}>
+              <img src={visual.src} alt={visual.alt} loading="lazy" />
+              <figcaption>
+                <span className="case-media-label">{visual.label}</span>
+                <h3>{visual.title}</h3>
+                <p>{visual.copy}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="case-study-grid">

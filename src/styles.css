@@ -996,8 +996,10 @@ main {
 .case-study-header h1,
 .case-study-hero-copy h2,
 .case-process .section-head h2,
+.case-visual-gallery .section-head h2,
 .case-card h3,
-.case-step-card h3 {
+.case-step-card h3,
+.case-media-card h3 {
   margin: 0;
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -1010,9 +1012,11 @@ main {
 
 .case-study-lead,
 .case-study-hero-copy p,
+.case-gallery-lead,
 .case-note,
 .case-list li,
-.case-step-card p {
+.case-step-card p,
+.case-media-card p {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -1057,9 +1061,83 @@ main {
 }
 
 .case-study-hero-copy h2,
-.case-process .section-head h2 {
+.case-process .section-head h2,
+.case-visual-gallery .section-head h2 {
   font-size: clamp(2.2rem, 4vw, 4rem);
   line-height: 0.98;
+}
+
+.case-visual-gallery {
+  padding: 3rem 0 0.5rem;
+}
+
+.case-visual-gallery .section-head {
+  max-width: 52rem;
+  margin-bottom: 1.4rem;
+}
+
+.case-gallery-lead {
+  max-width: 40rem;
+  margin: 0;
+}
+
+.case-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-media-card {
+  grid-column: span 6;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(155deg, rgba(247, 241, 232, 0.98), rgba(231, 221, 210, 0.92));
+  box-shadow: var(--shadow);
+  color: #1b1718;
+  overflow: hidden;
+}
+
+.case-media-hero {
+  grid-column: span 7;
+}
+
+.case-media-accent {
+  grid-column: span 5;
+}
+
+.case-media-full {
+  grid-column: 1 / -1;
+}
+
+.case-media-card img {
+  width: 100%;
+  display: block;
+  border-radius: 1.1rem;
+}
+
+.case-media-card figcaption {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.case-media-label {
+  color: rgba(27, 23, 24, 0.58);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+}
+
+.case-media-card h3 {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.06;
+}
+
+.case-media-card p {
+  margin: 0;
+  color: rgba(27, 23, 24, 0.72);
 }
 
 .case-list {
@@ -1154,6 +1232,17 @@ main {
 
   .project-card {
     grid-template-columns: 1fr;
+  }
+
+  .case-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-media-card,
+  .case-media-hero,
+  .case-media-accent,
+  .case-media-full {
+    grid-column: 1 / -1;
   }
 
   .project-toggle,
@@ -1442,14 +1531,28 @@ main {
   }
 
   .case-study-hero-copy h2,
-  .case-process .section-head h2 {
+  .case-process .section-head h2,
+  .case-visual-gallery .section-head h2 {
     font-size: clamp(1.9rem, 10vw, 2.8rem);
   }
 
   .case-study-hero-copy,
   .case-card,
   .case-study-hero .nikkah-mockup,
-  .case-step-card {
+  .case-step-card,
+  .case-media-card {
     padding: 1rem;
+  }
+
+  .case-visual-gallery {
+    padding-top: 2.2rem;
+  }
+
+  .case-media-card figcaption {
+    margin-top: 0.85rem;
+  }
+
+  .case-media-card h3 {
+    font-size: 1.28rem;
   }
 }
