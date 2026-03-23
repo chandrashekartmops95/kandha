@@ -189,8 +189,8 @@ function HomePage({
         <div className="hero-copy">
           <p className="eyebrow">UI/UX Focus / Bengaluru / Brand x Digital x Interaction</p>
           <h1>
-            I design UI/UX experiences
-            <span> that turn complexity into clarity, trust, and business impact.</span>
+            I design UI/UX
+            <span> that makes products clearer, sharper, and more valuable.</span>
           </h1>
           <p className="hero-text">
             From conversion-focused product flows to high-trust visual systems, I design interfaces that feel intuitive, premium, and built to move users to action.
@@ -296,7 +296,7 @@ function HomePage({
                         loading="lazy"
                       />
                     )}
-                    <span className="project-preview-pill">View case study</span>
+                    <span className="project-preview-pill">{isCaseStudy ? "View case study" : "View project"}</span>
                   </div>
                 </button>
 

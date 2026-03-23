@@ -142,7 +142,7 @@ main {
 
 .hero h1 {
   max-width: 10ch;
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(3.2rem, 8vw, 6.1rem);
 }
 
 .hero h1 span {
@@ -1161,13 +1161,13 @@ main {
 
 @media (max-width: 720px) {
   .topbar {
-    flex-direction: column;
     gap: 0.8rem;
+    padding-block: 1rem;
   }
 
   .nav {
-    gap: 0.9rem;
-    font-size: 0.92rem;
+    gap: 0.75rem;
+    font-size: 0.8rem;
   }
 
   .hero,
@@ -1182,29 +1182,249 @@ main {
     width: min(100vw - 1rem, 1180px);
   }
 
+  .eyebrow,
+  .section-kicker {
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.18em;
+    font-size: 0.64rem;
+  }
+
+  .hero {
+    gap: 1.25rem;
+    padding-top: 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 11vw, 3.45rem);
+    line-height: 0.94;
+  }
+
+  .hero-text {
+    margin-top: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+    margin-top: 1.35rem;
+  }
+
+  .button {
+    min-height: 3rem;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.84rem;
+  }
+
   .hero-stage {
-    min-height: 24rem;
+    min-height: 21rem;
+    border-radius: 1.5rem;
   }
 
   .hero-stage-image {
     opacity: 0.5;
   }
 
+  .hero-image-a {
+    width: 44%;
+    height: 39%;
+    right: 4%;
+    top: 6%;
+  }
+
+  .hero-image-b {
+    width: 40%;
+    height: 35%;
+    left: 6%;
+    bottom: 8%;
+  }
+
   .stage-card {
-    max-width: 14rem;
+    max-width: 12rem;
+    padding: 0.95rem;
+  }
+
+  .stage-card strong {
+    font-size: 1rem;
   }
 
   .stage-main {
-    top: 8%;
-    left: 6%;
+    top: 6%;
+    left: 5%;
   }
 
   .stage-note {
-    right: 6%;
-    bottom: 10%;
+    right: 5%;
+    bottom: 8%;
+  }
+
+  .stage-ring {
+    inset: 22% 10%;
+  }
+
+  .ticker {
+    padding-bottom: 1.4rem;
+  }
+
+  .ticker-track span {
+    font-size: 1.1rem;
+  }
+
+  .intro-grid {
+    padding: 0.25rem 0 2rem;
+  }
+
+  .intro-card {
+    padding: 1.1rem;
+  }
+
+  .metric strong {
+    font-size: 1.1rem;
+  }
+
+  .section-head {
+    margin-bottom: 1.2rem;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 0.95;
+  }
+
+  .work-section,
+  .contact-section,
+  .case-study-page {
+    padding-top: 0.75rem;
+  }
+
+  .project-card {
+    min-height: unset;
+    padding: 0.85rem;
+    border-radius: 1.5rem;
+  }
+
+  .project-toggle,
+  .project-expand {
+    gap: 0.85rem;
+  }
+
+  .project-card h3 {
+    margin: 1.5rem 0 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  .project-impact {
+    margin-top: 1.2rem;
+  }
+
+  .project-preview {
+    min-height: 12.5rem;
+  }
+
+  .project-card-case-study .project-preview {
+    padding: 0.85rem;
+  }
+
+  .project-preview-pill {
+    left: 0.8rem;
+    right: auto;
+    bottom: 0.8rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.66rem;
+  }
+
+  .nikkah-hero-card {
+    min-height: 8rem;
+    padding: 0.9rem;
+  }
+
+  .nikkah-heading span {
+    font-size: 1rem;
+  }
+
+  .nikkah-heading p,
+  .nikkah-plan p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .nikkah-credit-card {
+    width: 5.7rem;
+    height: 3.8rem;
+  }
+
+  .nikkah-credit-card.silver {
+    top: 1.7rem;
+    right: 0.7rem;
+  }
+
+  .nikkah-plan,
+  .nikkah-payment {
+    padding: 0.85rem;
+  }
+
+  .nikkah-tab,
+  .nikkah-prices span {
+    font-size: 0.82rem;
+  }
+
+  .project-expand {
+    padding: 0 0.1rem 0.1rem;
+  }
+
+  .project-main-image {
+    min-height: 15rem;
+  }
+
+  .project-visuals-open .project-main-image {
+    min-height: 16rem;
+  }
+
+  .project-thumbs-clickable {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-section {
     padding: 1.4rem;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(2.3rem, 12vw, 3.4rem);
+    line-height: 0.95;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-links a,
+  .contact-links span {
+    width: 100%;
+  }
+
+  .case-study-page {
+    padding: 2rem 0 3rem;
+  }
+
+  .case-study-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .case-study-header h1 {
+    font-size: clamp(2.4rem, 13vw, 4rem);
+    line-height: 0.94;
+  }
+
+  .case-study-hero-copy h2,
+  .case-process .section-head h2 {
+    font-size: clamp(1.9rem, 10vw, 2.8rem);
+  }
+
+  .case-study-hero-copy,
+  .case-card,
+  .case-study-hero .nikkah-mockup,
+  .case-step-card {
+    padding: 1rem;
   }
 }
