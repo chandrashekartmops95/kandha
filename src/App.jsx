@@ -38,14 +38,14 @@ const projects = [
     title: "My Nikkah",
     category: "UX Project",
     brief:
-      "Redesigned the subscription experience to simplify decision-making and strategically drive users toward higher-value plans, improving conversion potential and perceived premium value.",
+      "Designed an end-to-end user experience for a matrimonial platform — improving onboarding, simplifying discovery, and optimising subscription conversion through strategic UX and UI decisions.",
     impact:
-      "I treated this as a conversion and perception problem, using structure, hierarchy, and premium cues to make plan decisions easier and more persuasive.",
+      "I approached this as a journey design problem: reducing friction at every stage so users feel guided, trusted, and motivated to engage and upgrade.",
     accent: "gold",
     slug: UX_CASE_STUDY_PATH,
     details:
-      "A UX-led subscription redesign for a marriage platform where trust, clarity, and premium perception directly shape business outcomes.",
-    deliverables: ["UX audit", "Conversion strategy", "Choice architecture", "Premium UI"],
+      "A full UX redesign for a matrimonial platform where trust, guidance, and premium perception directly shape engagement and business outcomes.",
+    deliverables: ["End-to-end UX", "Onboarding flow", "Profile discovery", "Subscription redesign"],
   },
   {
     number: "02",
@@ -119,80 +119,90 @@ const tools = [
 ];
 
 const caseStudyGoals = [
-  "Increase paid subscription conversions",
-  "Improve clarity of plan value",
-  "Push users toward higher revenue tiers",
-  "Create a premium, trustworthy experience aligned with the brand",
+  "Improve user onboarding and guidance",
+  "Simplify profile discovery experience",
+  "Increase user engagement and time spent",
+  "Design a clear and persuasive subscription flow",
 ];
 
 const caseStudyInsights = [
-  "Users are emotion-driven but cautious, so trust signals matter as much as pricing",
-  "People want clear benefits before committing money",
-  "Simple, confident decisions outperform option-heavy flows",
-  "Premium design increases perceived credibility",
+  "Users are goal-oriented — finding a compatible partner — and need clear guidance at every step",
+  "Trust and clarity are prerequisites before users engage or pay",
+  "Guided, step-by-step experiences outperform open-ended exploration on matrimonial platforms",
+  "Too many choices without filters creates overwhelm and drop-off",
 ];
 
 const outcomes = [
-  "Increase in plan selection clarity",
-  "Higher click-through on the Gold plan through visual hierarchy",
-  "Reduced drop-offs at the pricing stage",
-  "Improved perceived trust and premium value",
+  "Clearer onboarding reduced confusion and drop-offs post sign-up",
+  "Better discovery experience increased engagement and time on platform",
+  "Improved filtering delivered more relevant matches and perceived intelligence",
+  "Stronger subscription clarity and visual hierarchy increased conversion potential",
+  "Improved trust and premium feel raised likelihood of user retention",
 ];
 
 const caseStudyDesktopVisuals = [
   {
+    label: "Landing & Onboarding",
+    title: "A premium first impression that earns trust before asking for anything.",
+    copy:
+      "The landing experience uses dark luxury cues, clear calls to action, and a guided onboarding flow — so users feel ready and confident to engage from the very first screen.",
+    src: "/projects/my-nikkah/landing-v2.png",
+    alt: "Laptop mockup showing the My Nikkah desktop landing page.",
+    layout: "full",
+  },
+  {
+    label: "Profile Discovery — Grid",
+    title: "A clean grid that makes browsing feel structured, not overwhelming.",
+    copy:
+      "Profiles are presented in a scannable grid with key details — name, age, location — surfaced at a glance. Visual hierarchy guides the eye without cluttering the screen.",
+    src: "/projects/my-nikkah/discover-grid.png",
+    alt: "Full-page grid view of profile discovery on My Nikkah.",
+    layout: "full",
+  },
+  {
+    label: "Profile Discovery — Individual",
+    title: "Profile browsing designed to feel immersive and focused.",
+    copy:
+      "The individual profile view gives full space to the person, keeping actions and utilities secondary until the user is ready to engage.",
+    src: "/projects/my-nikkah/discover-profile-individual.png",
+    alt: "Laptop mockup showing a male profile in the My Nikkah discovery experience.",
+    layout: "standard",
+  },
+  {
+    label: "Profile Completion",
+    title: "Nudges that help users build trust and improve match quality.",
+    copy:
+      "Completion prompts are framed as value-building moments — improving match relevance and giving users more confidence in the platform.",
+    src: "/projects/my-nikkah/profile-completion.png",
+    alt: "Profile view with a Complete Your Profile prompt in My Nikkah.",
+    layout: "standard",
+  },
+  {
     label: "Subscription",
     title: "The subscription journey leads with value before it ever asks for payment.",
     copy:
-      "The plan comparison, duration selection, and premium cues were designed to make the upgrade feel intentional, legible, and commercially persuasive.",
+      "Clear tier-based plans, Popular and Best indicators, and value-driven feature highlights guide users toward higher-value plans with reduced decision friction.",
     src: "/projects/my-nikkah/pricing-flow-mobile.jpeg",
     alt: "Subscription selection screen for the My Nikkah premium plans.",
     layout: "full",
   },
   {
     label: "Checkout",
-    title: "A cleaner payment layer that supports the premium upgrade moment.",
+    title: "A calmer payment layer that supports the upgrade moment.",
     copy:
-      "Payment options, form fields, and order summary were structured to feel calmer and more trustworthy at the point of conversion.",
+      "Payment options, form fields, and order summary are structured to feel trustworthy and unhurried at the point of conversion.",
     src: "/projects/my-nikkah/payment-checkout.jpeg",
     alt: "Payment modal for the My Nikkah subscription checkout flow.",
     layout: "full",
-  },
-  {
-    label: "Desktop landing",
-    title: "A premium first impression that makes the product feel worth paying for.",
-    copy:
-      "The landing experience leans into dark luxury cues, stronger imagery, and clearer calls to action so the product feels credible before users ever reach pricing.",
-    src: "/projects/my-nikkah/landing-desktop.jpeg",
-    alt: "Laptop mockup showing the My Nikkah desktop landing page.",
-    layout: "full",
-  },
-  {
-    label: "Discovery flow",
-    title: "Profile browsing designed to feel immersive and focused.",
-    copy:
-      "The discovery surface gives more room to the profile itself while keeping actions and utilities secondary until they are needed.",
-    src: "/projects/my-nikkah/discover-profile-man.jpeg",
-    alt: "Laptop mockup showing a male profile in the My Nikkah discovery experience.",
-    layout: "standard",
-  },
-  {
-    label: "Profile completion",
-    title: "Prompts that encourage users to build trust and complete their profile.",
-    copy:
-      "Completion nudges were framed as value-building moments, helping users improve match quality while increasing product confidence.",
-    src: "/projects/my-nikkah/discover-profile-woman.jpeg",
-    alt: "Laptop mockup showing a female profile with a profile completion prompt in My Nikkah.",
-    layout: "standard",
   },
 ];
 
 const caseStudyMobileVisuals = [
   {
     label: "Mobile system",
-    title: "The same premium language carried into the mobile version.",
+    title: "The full journey — onboarding, discovery, and subscription — carried into mobile.",
     copy:
-      "Core brand cues, content hierarchy, and profile discovery patterns were adapted for smaller screens without losing the sense of polish.",
+      "Every UX decision was adapted for smaller screens without losing the structure, warmth, or premium feel of the desktop experience.",
     src: "/projects/my-nikkah/mobile-system.jpeg",
     alt: "Mobile mockups showing the My Nikkah experience across several app screens.",
     layout: "full",
@@ -200,10 +210,10 @@ const caseStudyMobileVisuals = [
 ];
 
 const uxDecisions = [
-  "Used choice architecture to guide users instead of overwhelming them",
-  "Applied visual hierarchy to influence revenue-driving behavior",
-  "Balanced emotional design in a marriage context with conversion goals",
-  "Designed for trust, not just usability",
+  "Dark theme with gold accents builds a premium, trustworthy feel appropriate for the emotional context",
+  "Card-based layouts keep content structured and scannable",
+  "Minimal clutter keeps focus on profiles and decisions",
+  "Consistent typography and spacing improves readability across the journey",
 ];
 
 function navigateTo(path) {
@@ -449,18 +459,18 @@ function CaseStudyPage() {
           Back to portfolio
         </button>
         <p className="eyebrow">UX Case Study</p>
-        <h1>My Nikkah - Subscription Experience Redesign</h1>
+        <h1>My Nikkah - End-to-End UX Redesign</h1>
         <p className="case-study-lead">
-          Redesigned the subscription experience to simplify decision-making and strategically drive users toward higher-value plans, improving conversion potential and perceived premium value.
+          Designed an end-to-end user experience for a matrimonial platform, improving user guidance, simplifying discovery, and optimizing subscription conversion through strategic UX and UI decisions.
         </p>
       </div>
 
       <section className="case-study-hero">
         <div className="case-study-hero-copy">
           <p className="section-kicker">Overview</p>
-          <h2>From confusing pricing choices to a premium subscription journey designed to convert.</h2>
+          <h2>From drop-offs and confusion to a guided, trust-first experience that converts.</h2>
           <p>
-            I approached this as a conversion plus perception problem, not just a UI refresh. The redesign uses hierarchy, choice architecture, and premium visual language to help users make faster, more confident upgrade decisions.
+            I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
           </p>
         </div>
         <MyNikkahPreview />
@@ -469,9 +479,9 @@ function CaseStudyPage() {
       <section className="case-visual-gallery">
         <div className="section-head">
           <p className="section-kicker">Visual rollout</p>
-          <h2>Desktop and mobile versions across subscription, discovery, and checkout.</h2>
+          <h2>Desktop and mobile versions across the full user journey.</h2>
           <p className="case-gallery-lead">
-            These deliverables show how the redesign extended beyond pricing into the surrounding product experience, creating a more cohesive and conversion-ready system.
+            These deliverables show how the redesign spans onboarding, profile discovery, filtering, and subscription — creating a cohesive, trust-first experience from start to conversion.
           </p>
         </div>
         <div className="case-visual-group">
@@ -515,21 +525,21 @@ function CaseStudyPage() {
       <section className="case-study-grid">
         <article className="case-card">
           <p className="section-kicker">Problem</p>
-          <h3>Users could not clearly see why they should pay more.</h3>
+          <h3>Users were unsure what to do next — and had no clear reason to pay.</h3>
           <ul className="case-list">
-            <li>Value differences between Free, Silver, and Gold were not obvious.</li>
-            <li>The pricing structure felt fragmented because plan and duration decisions were split awkwardly.</li>
-            <li>There was no strong psychological push toward higher-tier plans.</li>
-            <li>Conversion likely dropped at plan selection and payment decision stages.</li>
+            <li>Users were not guided clearly after sign-up, leading to drop-offs.</li>
+            <li>Profile discovery felt overwhelming and unstructured.</li>
+            <li>The platform's value proposition was not effectively communicated.</li>
+            <li>Subscription plans lacked clarity and motivation to upgrade.</li>
           </ul>
           <p className="case-note">
-            Business problem: low free-to-paid conversion and under-optimization of the highest-value Gold plan.
+            Core UX problem: users were unsure what to do next and why to pay, creating friction across both engagement and conversion.
           </p>
         </article>
 
         <article className="case-card">
           <p className="section-kicker">Goal</p>
-          <h3>Increase conversion while making the experience feel more premium and trustworthy.</h3>
+          <h3>Design an experience that guides, engages, and converts.</h3>
           <div className="chip-group">
             {caseStudyGoals.map((goal) => (
               <span className="chip project-chip" key={goal}>
@@ -542,8 +552,8 @@ function CaseStudyPage() {
 
       <section className="case-study-grid case-study-grid-alt">
         <article className="case-card">
-          <p className="section-kicker">User Insight</p>
-          <h3>Trust and simplicity matter more than feature volume.</h3>
+          <p className="section-kicker">Understanding the User</p>
+          <h3>Goal-oriented users who need trust and clarity before they engage.</h3>
           <ul className="case-list">
             {caseStudyInsights.map((insight) => (
               <li key={insight}>{insight}</li>
@@ -552,8 +562,8 @@ function CaseStudyPage() {
         </article>
 
         <article className="case-card">
-          <p className="section-kicker">Expected Impact</p>
-          <h3>The redesigned experience is expected to increase paid conversions by 20 to 30 percent.</h3>
+          <p className="section-kicker">Impact</p>
+          <h3>Better guidance, stronger discovery, and a subscription experience that converts.</h3>
           <ul className="case-list">
             {outcomes.map((outcome) => (
               <li key={outcome}>{outcome}</li>
@@ -564,42 +574,42 @@ function CaseStudyPage() {
 
       <section className="case-process">
         <div className="section-head">
-          <p className="section-kicker">How value was added</p>
-          <h2>Ingenious UX decisions that changed perception and improved conversion potential.</h2>
+          <p className="section-kicker">Design approach</p>
+          <h2>Five focused decisions that reduced friction and improved the full user journey.</h2>
         </div>
         <div className="case-steps">
           <article className="case-step-card">
             <span>01</span>
-            <h3>Simplified decision architecture</h3>
-            <p>Structured plans into clear tiers, reduced cognitive load, and used progressive disclosure so users only saw what they needed at the right moment.</p>
+            <h3>Structured onboarding experience</h3>
+            <p>Designed a guided onboarding flow that breaks profile creation into simple, progressive steps — reducing confusion and increasing user readiness for discovery.</p>
           </article>
           <article className="case-step-card">
             <span>02</span>
-            <h3>Visual hierarchy for conversion</h3>
-            <p>Added Popular and Best tags, gave the Gold plan stronger contrast and weight, and used layout cues to guide attention toward higher-value options.</p>
+            <h3>Carousel-based content discovery</h3>
+            <p>Introduced carousel-based interaction so users can swipe through content intuitively. Chunking information into digestible sections reduced cognitive overload and increased engagement.</p>
           </article>
           <article className="case-step-card">
             <span>03</span>
-            <h3>Value clarification</h3>
-            <p>Reframed features as benefits users actually feel, like control, visibility, and connection, using a cleaner and more scannable checklist system.</p>
+            <h3>Simplified profile discovery</h3>
+            <p>Designed a clean grid layout with clear visual hierarchy — highlighting key details like name, age, and location — for faster decisions and improved usability.</p>
           </article>
           <article className="case-step-card">
             <span>04</span>
-            <h3>Pricing flow optimization</h3>
-            <p>Created a clearer two-step flow: choose the plan first, then choose duration. This reduces overwhelm and improves decision confidence.</p>
+            <h3>Smart filtering system</h3>
+            <p>Added preference-based filters aligned with interests, values, and lifestyle — delivering more relevant matches and making the platform feel intelligent and personalised.</p>
           </article>
           <article className="case-step-card">
             <span>05</span>
-            <h3>Premium experience design</h3>
-            <p>Used a dark theme, gold accents, structured cards, and a cleaner Continue to Pay action so the product feels premium enough to deserve payment.</p>
+            <h3>Subscription experience redesign</h3>
+            <p>Designed clear tier-based plans (Free, Silver, Gold) with value-driven features, Popular and Best indicators, and a two-step flow to reduce decision friction and guide users toward higher-value plans.</p>
           </article>
         </div>
       </section>
 
       <section className="case-study-grid">
         <article className="case-card">
-          <p className="section-kicker">Key UX Decisions</p>
-          <h3>Designed for trust, not just usability.</h3>
+          <p className="section-kicker">UI Design Decisions</p>
+          <h3>Every visual choice was made to build trust and reduce friction.</h3>
           <ul className="case-list">
             {uxDecisions.map((item) => (
               <li key={item}>{item}</li>
@@ -607,10 +617,10 @@ function CaseStudyPage() {
           </ul>
         </article>
         <article className="case-card">
-          <p className="section-kicker">Final Value Add</p>
-          <h3>A cleaner flow, stronger premium cues, and a smarter upgrade journey.</h3>
+          <p className="section-kicker">Key Takeaway</p>
+          <h3>Designing for clarity over complexity significantly improves engagement and conversion.</h3>
           <p className="case-note">
-            The redesign adds value by making plan differences obvious, reducing drop-off risk, and strategically increasing the appeal of higher-revenue tiers without making the experience feel pushy.
+            Guided experiences outperform open-ended exploration. When UX and brand thinking work together, the result is a product that feels worth paying for — and that users actually trust.
           </p>
           <button type="button" className="button primary case-button" onClick={() => navigateTo("/")}>
             Return to portfolio
