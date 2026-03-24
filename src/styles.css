@@ -135,7 +135,7 @@ main {
 .education-strip h2,
 .contact-section h2 {
   margin: 0;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 0.98;
   letter-spacing: -0.04em;
 }
@@ -192,7 +192,7 @@ main {
   background: linear-gradient(135deg, #f8d08a 0%, #ff8a68 100%);
   border-color: transparent;
   color: #131313;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .button.ghost {
@@ -266,7 +266,7 @@ main {
 .stage-card strong {
   font-size: 1.35rem;
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.03em;
 }
 
@@ -415,7 +415,7 @@ main {
 .intro-card-title {
   max-width: 12ch;
   font-size: clamp(1.55rem, 2vw, 2.05rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.03em;
   text-wrap: balance;
@@ -550,7 +550,7 @@ main {
 
 .project-meta span {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.05em;
   color: rgba(247, 241, 232, 0.5);
 }
@@ -629,7 +629,7 @@ main {
   box-shadow: var(--preview-pill-shadow);
   color: var(--preview-pill-text);
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
@@ -682,7 +682,7 @@ main {
 .nikkah-plan-title {
   display: block;
   color: #f4d19a;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.03em;
 }
 
@@ -942,7 +942,7 @@ main {
   margin-bottom: 3rem;
   color: rgba(247, 241, 232, 0.48);
   font-size: 2.2rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.05em;
 }
 
@@ -1026,7 +1026,7 @@ main {
 .case-step-card h3,
 .case-media-card h3 {
   margin: 0;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.04em;
 }
 
@@ -1219,7 +1219,7 @@ main {
   margin-bottom: 2rem;
   color: rgba(247, 241, 232, 0.48);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .case-button {
