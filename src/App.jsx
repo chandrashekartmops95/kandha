@@ -209,6 +209,29 @@ const caseStudyMobileVisuals = [
   },
 ];
 
+const userJourneySteps = [
+  {
+    stage: "Awareness",
+    description: "User hears about the matrimonial app through advertisements, social media, or word of mouth.",
+  },
+  {
+    stage: "Consideration",
+    description: "User downloads the app from the app store and onboards by creating a profile.",
+  },
+  {
+    stage: "Explore",
+    description: "Explores profiles based on their preferences. They view profiles and can express interest or move on to the next one.",
+  },
+  {
+    stage: "Subscribe",
+    description: "User has the option to subscribe to various plans which offer extra features and better visibility.",
+  },
+  {
+    stage: "Loyalty",
+    description: "Users who have a positive experience become long-term users and recommend the app to friends and family.",
+  },
+];
+
 const uxDecisions = [
   "Dark theme with gold accents builds a premium, trustworthy feel appropriate for the emotional context",
   "Card-based layouts keep content structured and scannable",
@@ -474,6 +497,26 @@ function CaseStudyPage() {
           </p>
         </div>
         <MyNikkahPreview />
+      </section>
+
+      <section className="user-journey">
+        <div className="user-journey-head">
+          <p className="section-kicker">User Journey</p>
+          <h2>Five stages from first impression to long-term loyalty.</h2>
+        </div>
+        <div className="user-journey-track">
+          <div className="user-journey-line" />
+          {userJourneySteps.map((step, i) => (
+            <div className="user-journey-step" key={step.stage}>
+              <div className="user-journey-node">
+                <span className="user-journey-index">{String(i + 1).padStart(2, "0")}</span>
+                <div className="user-journey-dot" />
+              </div>
+              <h3 className="user-journey-stage">{step.stage}</h3>
+              <p className="user-journey-desc">{step.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="case-visual-gallery">
