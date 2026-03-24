@@ -142,7 +142,7 @@ main {
 
 .hero h1 {
   max-width: 14ch;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
 }
 
 .hero h1 span {
@@ -1350,7 +1350,7 @@ main {
   }
 
   .hero h1 {
-    font-size: clamp(1.75rem, 7.7vw, 2.35rem);
+    font-size: clamp(1.5rem, 6.8vw, 2rem);
     line-height: 0.94;
   }
 
