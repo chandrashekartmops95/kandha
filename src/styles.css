@@ -141,7 +141,6 @@ main {
 }
 
 .hero h1 {
-  max-width: 14ch;
   font-size: clamp(1.6rem, 3.4vw, 2.6rem);
   text-wrap: balance;
 }
