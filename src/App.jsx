@@ -505,15 +505,50 @@ function CaseStudyPage() {
           <h2>Five stages from first impression to long-term loyalty.</h2>
         </div>
         <div className="user-journey-track">
-          <div className="user-journey-line" />
           {userJourneySteps.map((step, i) => (
             <div className="user-journey-step" key={step.stage}>
-              <div className="user-journey-node">
-                <span className="user-journey-index">{String(i + 1).padStart(2, "0")}</span>
-                <div className="user-journey-dot" />
+              <div className="uj-card">
+                <div className="uj-icon-wrap">
+                  {i === 0 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 8c0-2.2-1.8-4-4-4H6C3.8 4 2 5.8 2 8v8c0 2.2 1.8 4 4 4h3l3 3 3-3h3c2.2 0 4-1.8 4-4V8z"/>
+                      <line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/>
+                    </svg>
+                  )}
+                  {i === 1 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2"/>
+                      <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                  )}
+                  {i === 2 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                    </svg>
+                  )}
+                  {i === 3 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  )}
+                  {i === 4 && (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                  )}
+                </div>
+                <span className="uj-number">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="uj-stage">{step.stage}</h3>
+                <p className="uj-desc">{step.description}</p>
               </div>
-              <h3 className="user-journey-stage">{step.stage}</h3>
-              <p className="user-journey-desc">{step.description}</p>
+              {i < userJourneySteps.length - 1 && (
+                <div className="uj-connector">
+                  <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
+                    <path d="M0 8h20M14 2l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              )}
             </div>
           ))}
         </div>

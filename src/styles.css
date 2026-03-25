@@ -1110,69 +1110,82 @@ main {
 }
 
 .user-journey-track {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  align-items: flex-start;
   gap: 0;
 }
 
-.user-journey-line {
-  position: absolute;
-  top: 2rem;
-  left: calc(10% + 0.5rem);
-  right: calc(10% + 0.5rem);
-  height: 1px;
-  background: linear-gradient(90deg, var(--gold), rgba(255, 196, 103, 0.3));
-  z-index: 0;
+.user-journey-step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
 }
 
-.user-journey-step {
-  position: relative;
+.uj-card {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 0.75rem;
-  z-index: 1;
+  padding: 1.6rem 1rem;
+  border-radius: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.user-journey-node {
+.uj-card:hover {
+  border-color: rgba(255, 196, 103, 0.3);
+  box-shadow: 0 0 28px rgba(255, 196, 103, 0.08);
+}
+
+.uj-icon-wrap {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
-  margin-bottom: 0.9rem;
-}
-
-.user-journey-index {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-}
-
-.user-journey-dot {
-  width: 1rem;
-  height: 1rem;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  background: var(--bg);
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 10px rgba(255, 196, 103, 0.35);
+  background: rgba(255, 196, 103, 0.1);
+  border: 1px solid rgba(255, 196, 103, 0.2);
+  color: var(--gold);
+  margin-bottom: 1rem;
 }
 
-.user-journey-stage {
-  margin: 0 0 0.6rem;
+.uj-number {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
+.uj-stage {
+  margin: 0 0 0.5rem;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
 }
 
-.user-journey-desc {
+.uj-desc {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   line-height: 1.6;
   color: var(--muted);
+}
+
+.uj-connector {
+  flex-shrink: 0;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 196, 103, 0.4);
+  margin-top: -1rem;
 }
 
 .case-visual-gallery {
@@ -1356,17 +1369,16 @@ main {
   }
 
   .user-journey-track {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem;
-  }
-
-  .user-journey-line {
-    display: none;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .user-journey-step {
-    align-items: flex-start;
-    text-align: left;
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
+  .uj-connector {
+    display: none;
   }
 
   .project-grid {
