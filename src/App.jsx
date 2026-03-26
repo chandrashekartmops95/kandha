@@ -151,15 +151,6 @@ const caseStudyDesktopVisuals = [
     layout: "full",
   },
   {
-    label: "Profile Discovery — Individual",
-    title: "Profile browsing designed to feel immersive and focused.",
-    copy:
-      "The individual profile view gives full space to the person, keeping actions and utilities secondary until the user is ready to engage.",
-    src: "/projects/my-nikkah/discover-profile-individual.png",
-    alt: "Laptop mockup showing a male profile in the My Nikkah discovery experience.",
-    layout: "standard",
-  },
-  {
     label: "Profile Completion",
     title: "Nudges that help users build trust and improve match quality.",
     copy:
