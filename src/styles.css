@@ -1204,6 +1204,7 @@ main {
 }
 
 .case-visual-gallery .section-head {
+  width: fit-content;
   margin-bottom: 1.4rem;
 }
 

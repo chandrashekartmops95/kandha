@@ -657,7 +657,7 @@ function CaseStudyPage() {
           <p className="section-kicker">Visual rollout</p>
           <h2>Desktop and mobile versions across the full user journey.</h2>
           <p className="case-gallery-lead">
-            These deliverables show how the redesign spans onboarding, profile discovery, filtering, and subscription — creating a cohesive, trust first experience from start to conversion.
+            These deliverables show how the redesign spans onboarding, profile discovery, filtering, and subscription, creating a cohesive, trust first experience from start to conversion.
           </p>
         </div>
         <div className="case-visual-group">
