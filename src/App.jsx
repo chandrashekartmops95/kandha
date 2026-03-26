@@ -607,17 +607,12 @@ function CaseStudyPage() {
         </p>
       </div>
 
-      <section className="case-study-hero">
-        <div className="case-study-hero-copy">
-          <p className="section-kicker">Overview</p>
-          <h2>From drop-offs and confusion to a guided, trust-first experience that converts.</h2>
-          <p>
-            I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
-          </p>
-        </div>
-        <div className="case-hero-image-wrap">
-          <img src="/projects/my-nikkah/landing-v2.png" alt="My Nikkah desktop landing page" />
-        </div>
+      <section className="case-overview-text">
+        <p className="section-kicker">Overview</p>
+        <h2>From drop-offs and confusion to a guided, trust-first experience that converts.</h2>
+        <p>
+          I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
+        </p>
       </section>
 
       <section className="user-journey">

@@ -1354,12 +1354,24 @@ main {
   }
 }
 
-/* ── Case study hero image ── */
-.case-hero-image-wrap {
-  border-radius: 1.4rem;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: var(--shadow);
+.case-overview-text {
+  padding: 2.5rem 0 1rem;
+  max-width: 52rem;
+}
+
+.case-overview-text h2 {
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.case-overview-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .case-hero-image-wrap img {
