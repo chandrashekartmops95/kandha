@@ -38,7 +38,7 @@ const projects = [
     title: "My Nikkah",
     category: "UX Project",
     brief:
-      "Designed an end-to-end user experience for a matrimonial platform — improving onboarding, simplifying discovery, and optimising subscription conversion through strategic UX and UI decisions.",
+      "Designed an end to end user experience for a matrimonial platform — improving onboarding, simplifying discovery, and optimising subscription conversion through strategic UX and UI decisions.",
     impact:
       "I approached this as a journey design problem: reducing friction at every stage so users feel guided, trusted, and motivated to engage and upgrade.",
     accent: "gold",
@@ -126,14 +126,14 @@ const caseStudyGoals = [
 ];
 
 const caseStudyInsights = [
-  "Users are goal-oriented — finding a compatible partner — and need clear guidance at every step",
+  "Users are goal oriented — finding a compatible partner — and need clear guidance at every step",
   "Trust and clarity are prerequisites before users engage or pay",
-  "Guided, step-by-step experiences outperform open-ended exploration on matrimonial platforms",
-  "Too many choices without filters creates overwhelm and drop-off",
+  "Guided, step by step experiences outperform open ended exploration on matrimonial platforms",
+  "Too many choices without filters creates overwhelm and drop off",
 ];
 
 const outcomes = [
-  "Clearer onboarding reduced confusion and drop-offs post sign-up",
+  "Clearer onboarding reduced confusion and drop offs post sign up",
   "Better discovery experience increased engagement and time on platform",
   "Improved filtering delivered more relevant matches and perceived intelligence",
   "Stronger subscription clarity and visual hierarchy increased conversion potential",
@@ -154,7 +154,7 @@ const caseStudyDesktopVisuals = [
     label: "Profile Completion",
     title: "Nudges that help users build trust and improve match quality.",
     copy:
-      "Completion prompts are framed as value-building moments — improving match relevance and giving users more confidence in the platform.",
+      "Completion prompts are framed as value building moments — improving match relevance and giving users more confidence in the platform.",
     src: "/projects/my-nikkah/profile-completion.png",
     alt: "Profile view with a Complete Your Profile prompt in My Nikkah.",
     layout: "standard",
@@ -163,7 +163,7 @@ const caseStudyDesktopVisuals = [
     label: "Subscription",
     title: "The subscription journey leads with value before it ever asks for payment.",
     copy:
-      "Clear tier-based plans, Popular and Best indicators, and value-driven feature highlights guide users toward higher-value plans with reduced decision friction.",
+      "Clear tier based plans, Popular and Best indicators, and value driven feature highlights guide users toward higher value plans with reduced decision friction.",
     src: "/projects/my-nikkah/pricing-flow-mobile.jpeg",
     alt: "Subscription selection screen for the My Nikkah premium plans.",
     layout: "full",
@@ -210,13 +210,13 @@ const userJourneySteps = [
   },
   {
     stage: "Loyalty",
-    description: "Users who have a positive experience become long-term users and recommend the app to friends and family.",
+    description: "Users who have a positive experience become long term users and recommend the app to friends and family.",
   },
 ];
 
 const uxDecisions = [
   "Dark theme with gold accents builds a premium, trustworthy feel appropriate for the emotional context",
-  "Card-based layouts keep content structured and scannable",
+  "Card based layouts keep content structured and scannable",
   "Minimal clutter keeps focus on profiles and decisions",
   "Consistent typography and spacing improves readability across the journey",
 ];
@@ -583,15 +583,15 @@ function CaseStudyPage() {
           Back to portfolio
         </button>
         <p className="eyebrow">UX Case Study</p>
-        <h1>My Nikkah: End-to-End UX Redesign</h1>
+        <h1>My Nikkah: End to End UX Redesign</h1>
         <p className="case-study-lead">
-          Designed an end-to-end user experience for a matrimonial platform, improving user guidance, simplifying discovery, and optimizing subscription conversion through strategic UX and UI decisions.
+          Designed an end to end user experience for a matrimonial platform, improving user guidance, simplifying discovery, and optimizing subscription conversion through strategic UX and UI decisions.
         </p>
       </div>
 
       <section className="case-overview-text">
         <p className="section-kicker">Overview</p>
-        <h2>From drop-offs and confusion to a guided, trust-first experience that converts.</h2>
+        <h2>From drop offs and confusion to a guided, trust first experience that converts.</h2>
         <p>
           I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
         </p>
@@ -600,7 +600,7 @@ function CaseStudyPage() {
       <section className="user-journey">
         <div className="user-journey-head">
           <p className="section-kicker">User Journey</p>
-          <h2>Five stages from first impression to long-term loyalty.</h2>
+          <h2>Five stages from first impression to long term loyalty.</h2>
         </div>
         <div className="user-journey-track">
           {userJourneySteps.map((step, i) => (
@@ -657,7 +657,7 @@ function CaseStudyPage() {
           <p className="section-kicker">Visual rollout</p>
           <h2>Desktop and mobile versions across the full user journey.</h2>
           <p className="case-gallery-lead">
-            These deliverables show how the redesign spans onboarding, profile discovery, filtering, and subscription — creating a cohesive, trust-first experience from start to conversion.
+            These deliverables show how the redesign spans onboarding, profile discovery, filtering, and subscription — creating a cohesive, trust first experience from start to conversion.
           </p>
         </div>
         <div className="case-visual-group">
@@ -711,7 +711,7 @@ function CaseStudyPage() {
           <p className="section-kicker">Problem</p>
           <h3>Users were unsure what to do next — and had no clear reason to pay.</h3>
           <ul className="case-list">
-            <li>Users were not guided clearly after sign-up, leading to drop-offs.</li>
+            <li>Users were not guided clearly after sign up, leading to drop offs.</li>
             <li>Profile discovery felt overwhelming and unstructured.</li>
             <li>The platform's value proposition was not effectively communicated.</li>
             <li>Subscription plans lacked clarity and motivation to upgrade.</li>
@@ -737,7 +737,7 @@ function CaseStudyPage() {
       <section className="case-study-grid case-study-grid-alt">
         <article className="case-card">
           <p className="section-kicker">Understanding the User</p>
-          <h3>Goal-oriented users who need trust and clarity before they engage.</h3>
+          <h3>Goal oriented users who need trust and clarity before they engage.</h3>
           <ul className="case-list">
             {caseStudyInsights.map((insight) => (
               <li key={insight}>{insight}</li>
@@ -769,8 +769,8 @@ function CaseStudyPage() {
           </article>
           <article className="case-step-card">
             <span>02</span>
-            <h3>Carousel-based content discovery</h3>
-            <p>Introduced carousel-based interaction so users can swipe through content intuitively. Chunking information into digestible sections reduced cognitive overload and increased engagement.</p>
+            <h3>Carousel based content discovery</h3>
+            <p>Introduced carousel based interaction so users can swipe through content intuitively. Chunking information into digestible sections reduced cognitive overload and increased engagement.</p>
           </article>
           <article className="case-step-card">
             <span>03</span>
@@ -780,12 +780,12 @@ function CaseStudyPage() {
           <article className="case-step-card">
             <span>04</span>
             <h3>Smart filtering system</h3>
-            <p>Added preference-based filters aligned with interests, values, and lifestyle — delivering more relevant matches and making the platform feel intelligent and personalised.</p>
+            <p>Added preference based filters aligned with interests, values, and lifestyle — delivering more relevant matches and making the platform feel intelligent and personalised.</p>
           </article>
           <article className="case-step-card">
             <span>05</span>
             <h3>Subscription experience redesign</h3>
-            <p>Designed clear tier-based plans (Free, Silver, Gold) with value-driven features, Popular and Best indicators, and a two-step flow to reduce decision friction and guide users toward higher-value plans.</p>
+            <p>Designed clear tier based plans (Free, Silver, Gold) with value driven features, Popular and Best indicators, and a two step flow to reduce decision friction and guide users toward higher value plans.</p>
           </article>
         </div>
       </section>
