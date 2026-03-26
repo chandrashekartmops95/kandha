@@ -1362,25 +1362,18 @@ main {
 
 .case-overview-text {
   padding: 2.5rem 0 1rem;
-}
-
-.case-overview-body {
-  display: grid;
-  grid-template-columns: 55% 1fr;
-  gap: 0 4rem;
-  align-items: start;
-  margin-top: 0.4rem;
+  max-width: 52rem;
 }
 
 .case-overview-text h2 {
-  margin: 0;
+  margin: 0.4rem 0 1rem;
   font-size: clamp(1.6rem, 3vw, 2.6rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
-.case-overview-right {
+.case-overview-text p {
   margin: 0;
   color: var(--muted);
   font-size: 1.05rem;
@@ -2092,13 +2085,6 @@ main {
     padding: 2rem 0 3rem;
   }
 
-  .case-overview-body {
-    grid-template-columns: 1fr;
-  }
-
-  .case-overview-right {
-    margin-top: 1rem;
-  }
 
   .case-study-header {
     margin-bottom: 1.25rem;

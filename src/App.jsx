@@ -591,12 +591,10 @@ function CaseStudyPage() {
 
       <section className="case-overview-text">
         <p className="section-kicker">Overview</p>
-        <div className="case-overview-body">
-          <h2>From drop offs and confusion to a guided, trust first experience that converts.</h2>
-          <p className="case-overview-right">
-            I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
-          </p>
-        </div>
+        <h2>From drop offs and confusion to a guided, trust first experience that converts.</h2>
+        <p>
+          I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
+        </p>
       </section>
 
       <section className="user-journey">
