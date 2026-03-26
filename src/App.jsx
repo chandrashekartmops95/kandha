@@ -590,9 +590,11 @@ function CaseStudyPage() {
       </div>
 
       <section className="case-overview-text">
-        <p className="section-kicker">Overview</p>
-        <h2>From drop offs and confusion to a guided, trust first experience that converts.</h2>
-        <p>
+        <div className="case-overview-left">
+          <p className="section-kicker">Overview</p>
+          <h2>From drop offs and confusion to a guided, trust first experience that converts.</h2>
+        </div>
+        <p className="case-overview-right">
           I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
         </p>
       </section>
