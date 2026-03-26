@@ -1362,14 +1362,18 @@ main {
 
 .case-overview-text {
   padding: 2.5rem 0 1rem;
+}
+
+.case-overview-body {
   display: grid;
   grid-template-columns: 55% 1fr;
   gap: 0 4rem;
   align-items: start;
+  margin-top: 0.4rem;
 }
 
 .case-overview-text h2 {
-  margin: 0.4rem 0 0;
+  margin: 0;
   font-size: clamp(1.6rem, 3vw, 2.6rem);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -2088,7 +2092,7 @@ main {
     padding: 2rem 0 3rem;
   }
 
-  .case-overview-text {
+  .case-overview-body {
     grid-template-columns: 1fr;
   }
 
