@@ -142,15 +142,6 @@ const outcomes = [
 
 const caseStudyDesktopVisuals = [
   {
-    label: "Landing & Onboarding",
-    title: "A premium first impression that earns trust before asking for anything.",
-    copy:
-      "The landing experience uses dark luxury cues, clear calls to action, and a guided onboarding flow — so users feel ready and confident to engage from the very first screen.",
-    src: "/projects/my-nikkah/landing-v2.png",
-    alt: "Laptop mockup showing the My Nikkah desktop landing page.",
-    layout: "full",
-  },
-  {
     label: "Profile Discovery — Grid",
     title: "A clean grid that makes browsing feel structured, not overwhelming.",
     copy:
