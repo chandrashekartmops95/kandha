@@ -1035,7 +1035,12 @@ main {
   white-space: nowrap;
 }
 
-.case-study-lead,
+.case-study-lead {
+  max-width: 55rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .case-study-hero-copy p,
 .case-gallery-lead,
 .case-note,
@@ -1097,7 +1102,7 @@ main {
 }
 
 .user-journey-head {
-  max-width: 42rem;
+  max-width: 56rem;
   margin-bottom: 2.5rem;
 }
 
