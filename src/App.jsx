@@ -392,7 +392,11 @@ function HomePage({
                   </div>
                   <div className="project-preview">
                     {isCaseStudy ? (
-                      <MyNikkahPreview compact />
+                      <img
+                        className="project-preview-image"
+                        src="/projects/my-nikkah/landing-v2.png"
+                        alt="My Nikkah landing page"
+                      />
                     ) : (
                       <img
                         className="project-preview-image"
