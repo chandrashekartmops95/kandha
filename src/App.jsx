@@ -579,11 +579,13 @@ function CaseStudyPage() {
   return (
     <div className="case-study-page">
       <div className="case-study-header">
-        <button type="button" className="back-link" onClick={() => navigateTo("/")}>
-          Back to portfolio
-        </button>
-        <p className="eyebrow">UX Case Study</p>
-        <h1>My Nikkah: End to End UX Redesign</h1>
+        <div className="case-study-header-left">
+          <button type="button" className="back-link" onClick={() => navigateTo("/")}>
+            Back to portfolio
+          </button>
+          <p className="eyebrow">UX Case Study</p>
+          <h1>My Nikkah: End to End UX Redesign</h1>
+        </div>
         <p className="case-study-lead">
           An online platform designed to facilitate the process of finding a suitable life partner for individuals within the Muslim community. This offers a modern and convenient approach to matchmaking while adhering to Islamic traditions and values. The app caters to the specific needs and cultural requirements of the Muslim community, ensuring that individuals seeking a life partner can adhere to their faith while also finding compatibility.
         </p>

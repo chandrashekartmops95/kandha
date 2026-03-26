@@ -1003,8 +1003,11 @@ main {
 }
 
 .case-study-header {
-  max-width: 54rem;
   margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 3rem;
+  align-items: end;
 }
 
 .back-link {
@@ -2094,6 +2097,11 @@ main {
 
   .case-study-header {
     margin-bottom: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-lead {
+    margin-top: 1rem;
   }
 
   .case-study-header h1 {
