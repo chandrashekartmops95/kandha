@@ -1004,10 +1004,6 @@ main {
 
 .case-study-header {
   margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 3rem;
-  align-items: end;
 }
 
 .back-link {
@@ -1362,9 +1358,9 @@ main {
 .case-overview-text {
   padding: 2.5rem 0 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 3rem;
-  align-items: center;
+  grid-template-columns: 55% 1fr;
+  gap: 0 4rem;
+  align-items: start;
 }
 
 .case-overview-text h2 {
@@ -2097,11 +2093,6 @@ main {
 
   .case-study-header {
     margin-bottom: 1.25rem;
-    grid-template-columns: 1fr;
-  }
-
-  .case-study-lead {
-    margin-top: 1rem;
   }
 
   .case-study-header h1 {
