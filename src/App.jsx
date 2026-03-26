@@ -474,6 +474,121 @@ function HomePage({
   );
 }
 
+function MobilePhoneMockups() {
+  return (
+    <div className="mobile-mockups-wrap">
+      {/* Phone 1: Onboarding */}
+      <div className="phone-frame">
+        <div className="phone-screen">
+          <div className="pscreen-status">
+            <span>9:41</span>
+            <div className="pscreen-status-icons">
+              <span>●●●</span>
+            </div>
+          </div>
+          <div className="pscreen-onboard">
+            <div className="pscreen-logo">My Nikkah</div>
+            <div className="pscreen-hero-img">
+              <div className="pscreen-hero-gradient" />
+              <div className="pscreen-hero-text">
+                <span>Find Your</span>
+                <span>Perfect Match</span>
+              </div>
+            </div>
+            <div className="pscreen-members">
+              <span className="pscreen-members-label">Members Who Found Love</span>
+              <div className="pscreen-avatars">
+                <div className="pscreen-avatar" style={{background:"linear-gradient(135deg,#c98b2a,#f8c76d)"}} />
+                <div className="pscreen-avatar" style={{background:"linear-gradient(135deg,#8b6c42,#d4a96a)"}} />
+                <div className="pscreen-avatar" style={{background:"linear-gradient(135deg,#5a4a3a,#9a7a5a)"}} />
+              </div>
+            </div>
+            <button className="pscreen-cta">Get Started</button>
+            <span className="pscreen-signin">Already have an account? Sign In</span>
+          </div>
+        </div>
+        <div className="phone-label">Onboarding</div>
+      </div>
+
+      {/* Phone 2: Discover Profile */}
+      <div className="phone-frame">
+        <div className="phone-screen">
+          <div className="pscreen-status">
+            <span>9:41</span>
+            <div className="pscreen-status-icons"><span>●●●</span></div>
+          </div>
+          <div className="pscreen-discover">
+            <div className="pscreen-nav">
+              <span className="pscreen-nav-logo">My Nikkah</span>
+              <div className="pscreen-nav-actions">
+                <div className="pscreen-nav-dot" />
+                <div className="pscreen-nav-dot" />
+              </div>
+            </div>
+            <div className="pscreen-discover-title">Discover Profile</div>
+            <div className="pscreen-filters">
+              <span className="pscreen-filter is-active">All</span>
+              <span className="pscreen-filter">Nearby</span>
+              <span className="pscreen-filter">Online</span>
+            </div>
+            <div className="pscreen-profile-card">
+              <div className="pscreen-profile-img">
+                <div className="pscreen-profile-gradient" />
+              </div>
+              <div className="pscreen-profile-info">
+                <span className="pscreen-profile-name">Zarah, 25</span>
+                <span className="pscreen-profile-location">📍 Bahrain · UAE/Abu Dhabi</span>
+              </div>
+              <div className="pscreen-profile-actions">
+                <div className="pscreen-action pass">✕</div>
+                <div className="pscreen-action super">⚡</div>
+                <div className="pscreen-action like">♥</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="phone-label">Profile Discovery</div>
+      </div>
+
+      {/* Phone 3: Subscription */}
+      <div className="phone-frame">
+        <div className="phone-screen">
+          <div className="pscreen-status">
+            <span>9:41</span>
+            <div className="pscreen-status-icons"><span>●●●</span></div>
+          </div>
+          <div className="pscreen-subscription">
+            <div className="pscreen-sub-header">Get Premium</div>
+            <p className="pscreen-sub-sub">Unlock the full My Nikkah experience</p>
+            <div className="pscreen-plan-tabs">
+              <span className="pscreen-plan-tab">Free</span>
+              <span className="pscreen-plan-tab is-active">Silver</span>
+              <span className="pscreen-plan-tab">Gold</span>
+            </div>
+            <div className="pscreen-price-list">
+              <div className="pscreen-price-row">
+                <span>1 Day</span>
+                <span className="pscreen-price-val">$6</span>
+              </div>
+              <div className="pscreen-price-row is-selected">
+                <span>1 Week</span>
+                <span className="pscreen-price-val">$13</span>
+              </div>
+              <div className="pscreen-price-row">
+                <span>1 Month</span>
+                <span className="pscreen-price-val">$26</span>
+              </div>
+            </div>
+            <button className="pscreen-subscribe-btn">Subscribe · $13/week</button>
+            <span className="pscreen-terms">Cancel anytime · Secure payment</span>
+          </div>
+        </div>
+        <div className="phone-label">Subscription</div>
+      </div>
+    </div>
+  );
+}
+
 function CaseStudyPage() {
   return (
     <div className="case-study-page">
@@ -482,7 +597,7 @@ function CaseStudyPage() {
           Back to portfolio
         </button>
         <p className="eyebrow">UX Case Study</p>
-        <h1>My Nikkah - End-to-End UX Redesign</h1>
+        <h1>My Nikkah: End-to-End UX Redesign</h1>
         <p className="case-study-lead">
           Designed an end-to-end user experience for a matrimonial platform, improving user guidance, simplifying discovery, and optimizing subscription conversion through strategic UX and UI decisions.
         </p>
@@ -496,7 +611,9 @@ function CaseStudyPage() {
             I approached this as a journey design problem — not just a UI refresh. The focus was on reducing friction at every stage: onboarding, discovery, filtering, and subscription. The result is an experience that is intuitive, emotionally engaging, and optimised for both user trust and monetisation.
           </p>
         </div>
-        <MyNikkahPreview />
+        <div className="case-hero-image-wrap">
+          <img src="/projects/my-nikkah/landing-v2.png" alt="My Nikkah desktop landing page" />
+        </div>
       </section>
 
       <section className="user-journey">
@@ -598,6 +715,14 @@ function CaseStudyPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mobile-mockups-section">
+        <div className="section-head" style={{maxWidth:"42rem",marginBottom:"2rem"}}>
+          <p className="section-kicker">Mobile experience</p>
+          <h2>The same journey, adapted for mobile.</h2>
+        </div>
+        <MobilePhoneMockups />
       </section>
 
       <section className="case-study-grid">

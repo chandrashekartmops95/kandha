@@ -1354,6 +1354,396 @@ main {
   }
 }
 
+/* ── Case study hero image ── */
+.case-hero-image-wrap {
+  border-radius: 1.4rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+}
+
+.case-hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Mobile mockups ── */
+.mobile-mockups-section {
+  padding: 3rem 0;
+}
+
+.mobile-mockups-wrap {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.phone-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phone-screen {
+  width: 200px;
+  height: 400px;
+  border-radius: 28px;
+  border: 7px solid #1e1e24;
+  background: #0a0a0e;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 32px 64px rgba(0,0,0,0.5);
+}
+
+.phone-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Status bar */
+.pscreen-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.75rem 0.2rem;
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: rgba(247,241,232,0.5);
+}
+
+/* ── Screen 1: Onboarding ── */
+.pscreen-onboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.75rem 0.75rem;
+  height: calc(100% - 1.2rem);
+}
+
+.pscreen-logo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f4d19a;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.pscreen-hero-img {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+  min-height: 0;
+}
+
+.pscreen-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(180,120,40,0.6) 0%, rgba(10,10,14,0.9) 80%),
+              linear-gradient(to bottom, #1a1408, #0a0a0e);
+}
+
+.pscreen-hero-text {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+}
+
+.pscreen-hero-text span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #f4d19a;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.pscreen-members {
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.pscreen-members-label {
+  display: block;
+  font-size: 0.45rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.pscreen-avatars {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.pscreen-avatar {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,202,129,0.3);
+}
+
+.pscreen-cta {
+  width: 100%;
+  padding: 0.45rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f8c76d, #c98b2a);
+  color: #0a0a0e;
+  font-size: 0.6rem;
+  font-weight: 700;
+  cursor: default;
+  margin-bottom: 0.4rem;
+}
+
+.pscreen-signin {
+  font-size: 0.42rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── Screen 2: Discovery ── */
+.pscreen-discover {
+  padding: 0 0.6rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 1.2rem);
+}
+
+.pscreen-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pscreen-nav-logo {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #f4d19a;
+  letter-spacing: 0.04em;
+}
+
+.pscreen-nav-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pscreen-nav-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+}
+
+.pscreen-discover-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f4d19a;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+
+.pscreen-filters {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pscreen-filter {
+  font-size: 0.42rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted);
+}
+
+.pscreen-filter.is-active {
+  background: rgba(255,202,129,0.15);
+  border-color: rgba(255,202,129,0.35);
+  color: #f4d19a;
+}
+
+.pscreen-profile-card {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,202,129,0.14);
+  background: rgba(20,18,23,0.94);
+}
+
+.pscreen-profile-img {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.pscreen-profile-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, rgba(160,110,40,0.5), rgba(10,10,14,0.95)),
+              linear-gradient(to bottom, #1c1408, #0a0a0e);
+}
+
+.pscreen-profile-info {
+  padding: 0.4rem 0.5rem 0.2rem;
+}
+
+.pscreen-profile-name {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.pscreen-profile-location {
+  display: block;
+  font-size: 0.42rem;
+  color: var(--muted);
+  margin-top: 0.1rem;
+}
+
+.pscreen-profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.pscreen-action {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.pscreen-action.pass { color: #ff9fb2; border-color: rgba(255,159,178,0.25); }
+.pscreen-action.super { color: #f4d19a; background: rgba(255,202,129,0.12); border-color: rgba(255,202,129,0.3); }
+.pscreen-action.like { color: #90f7d0; border-color: rgba(144,247,208,0.25); }
+
+/* ── Screen 3: Subscription ── */
+.pscreen-subscription {
+  padding: 0 0.7rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 1.2rem);
+}
+
+.pscreen-sub-header {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f4d19a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+  align-self: flex-start;
+}
+
+.pscreen-sub-sub {
+  font-size: 0.44rem;
+  color: var(--muted);
+  margin: 0 0 0.7rem;
+  line-height: 1.4;
+  align-self: flex-start;
+}
+
+.pscreen-plan-tabs {
+  display: flex;
+  width: 100%;
+  gap: 0.3rem;
+  margin-bottom: 0.7rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  padding: 0.2rem;
+}
+
+.pscreen-plan-tab {
+  flex: 1;
+  text-align: center;
+  font-size: 0.48rem;
+  font-weight: 600;
+  padding: 0.3rem 0;
+  border-radius: 999px;
+  color: var(--muted);
+}
+
+.pscreen-plan-tab.is-active {
+  background: rgba(255,202,129,0.18);
+  color: #f4d19a;
+  border: 1px solid rgba(255,202,129,0.3);
+}
+
+.pscreen-price-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.7rem;
+  flex: 1;
+}
+
+.pscreen-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.52rem;
+  color: var(--muted);
+}
+
+.pscreen-price-row.is-selected {
+  background: rgba(255,202,129,0.1);
+  border-color: rgba(255,202,129,0.3);
+  color: var(--text);
+}
+
+.pscreen-price-val {
+  font-weight: 700;
+  color: #f4d19a;
+}
+
+.pscreen-subscribe-btn {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f8c76d, #c98b2a);
+  color: #0a0a0e;
+  font-size: 0.54rem;
+  font-weight: 700;
+  cursor: default;
+  margin-bottom: 0.35rem;
+}
+
+.pscreen-terms {
+  font-size: 0.4rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 @media (max-width: 1080px) {
   .hero,
   .intro-grid,
