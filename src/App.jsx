@@ -585,7 +585,7 @@ function CaseStudyPage() {
         <p className="eyebrow">UX Case Study</p>
         <h1>My Nikkah: End to End UX Redesign</h1>
         <p className="case-study-lead">
-          Designed an end to end user experience for a matrimonial platform, improving user guidance, simplifying discovery, and optimizing subscription conversion through strategic UX and UI decisions.
+          An online platform designed to facilitate the process of finding a suitable life partner for individuals within the Muslim community. This offers a modern and convenient approach to matchmaking while adhering to Islamic traditions and values. The app caters to the specific needs and cultural requirements of the Muslim community, ensuring that individuals seeking a life partner can adhere to their faith while also finding compatibility.
         </p>
       </div>
 
