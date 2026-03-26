@@ -157,7 +157,7 @@ const caseStudyDesktopVisuals = [
       "Completion prompts are framed as value building moments — improving match relevance and giving users more confidence in the platform.",
     src: "/projects/my-nikkah/profile-completion.png",
     alt: "Profile view with a Complete Your Profile prompt in My Nikkah.",
-    layout: "standard",
+    layout: "full",
   },
   {
     label: "Subscription",
