@@ -1091,10 +1091,15 @@ main {
 }
 
 .case-study-hero-copy h2,
-.case-process .section-head h2,
-.case-visual-gallery .section-head h2 {
+.case-process .section-head h2 {
   font-size: clamp(2.2rem, 4vw, 4rem);
   line-height: 0.98;
+}
+
+.case-visual-gallery .section-head h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+  line-height: 0.98;
+  white-space: nowrap;
 }
 
 .user-journey {
@@ -1199,7 +1204,6 @@ main {
 }
 
 .case-visual-gallery .section-head {
-  max-width: 52rem;
   margin-bottom: 1.4rem;
 }
 
@@ -2096,9 +2100,13 @@ main {
   }
 
   .case-study-hero-copy h2,
-  .case-process .section-head h2,
-  .case-visual-gallery .section-head h2 {
+  .case-process .section-head h2 {
     font-size: clamp(1.9rem, 10vw, 2.8rem);
+  }
+
+  .case-visual-gallery .section-head h2 {
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+    white-space: normal;
   }
 
   .case-study-hero-copy,
