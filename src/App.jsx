@@ -249,6 +249,16 @@ function useSpotlight() {
   }, []);
 }
 
+function IntroVeil() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add("veil-gone")));
+  }, []);
+  return <div className="intro-veil" ref={ref} aria-hidden="true" />;
+}
+
 function MyNikkahPreview({ compact = false }) {
   return (
     <div className={`nikkah-mockup ${compact ? "is-compact" : ""}`}>
@@ -398,8 +408,14 @@ function HomePage({
         <div className="hero-copy">
           <p className="eyebrow">Brand x Digital x Interaction</p>
           <h1>
-            Brand &amp; UX designer
-            <span> crafting experiences that drive business impact and solve problems.</span>
+            <span className="sw" style={{"--wi":0}}><span>Brand</span></span>
+            {" "}
+            <span className="sw" style={{"--wi":1}}><span>&amp;</span></span>
+            {" "}
+            <span className="sw" style={{"--wi":2}}><span>UX</span></span>
+            {" "}
+            <span className="sw" style={{"--wi":3}}><span>designer</span></span>
+            <span className="hero-sub"> crafting experiences that drive business impact and solve problems.</span>
           </h1>
           <p className="hero-text">
             From packaging that drives crores in sales to digital experiences designed to convert users.
@@ -981,6 +997,7 @@ function App() {
 
   return (
     <div className="page-shell">
+      <IntroVeil />
       <NoiseOverlay />
       <div className="ambient ambient-a" />
       <div className="ambient ambient-b" />
