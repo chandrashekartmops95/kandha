@@ -226,6 +226,18 @@ function navigateTo(path) {
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
+function NoiseOverlay() {
+  return (
+    <svg className="noise-overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <filter id="noiseFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+  );
+}
+
 function Cursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);
@@ -339,6 +351,7 @@ function HomePage({
   setOpenProject,
   setSelectedImageByProject,
 }) {
+  // Hero stage 3D tilt
   useEffect(() => {
     const stage = document.querySelector(".hero-stage");
     if (!stage) return;
@@ -367,6 +380,67 @@ function HomePage({
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(rid);
     };
+  }, []);
+
+  // Scroll parallax on hero images
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      const imgA = document.querySelector(".hero-image-a");
+      const imgB = document.querySelector(".hero-image-b");
+      if (imgA) imgA.style.transform = `rotate(7deg) translateY(${y * -0.07}px)`;
+      if (imgB) imgB.style.transform = `rotate(-8deg) translateY(${y * -0.11}px)`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Eyebrow text scramble on load
+  useEffect(() => {
+    const el = document.querySelector(".eyebrow");
+    if (!el) return;
+    const original = el.textContent;
+    const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let frame = 0;
+    const TOTAL = 36;
+    let rid;
+    const tick = () => {
+      const resolved = Math.floor((frame / TOTAL) * original.length);
+      let out = "";
+      for (let i = 0; i < original.length; i++) {
+        if (i < resolved || original[i] === " " || original[i] === "x") {
+          out += original[i];
+        } else {
+          out += CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+      }
+      el.textContent = out;
+      if (frame < TOTAL) { frame++; rid = requestAnimationFrame(tick); }
+    };
+    const t = setTimeout(() => { rid = requestAnimationFrame(tick); }, 500);
+    return () => { clearTimeout(t); cancelAnimationFrame(rid); el.textContent = original; };
+  }, []);
+
+  // Magnetic buttons
+  useEffect(() => {
+    const btns = document.querySelectorAll(".button.primary, .button.ghost");
+    const cleanup = [];
+    btns.forEach((btn) => {
+      const onMove = (e) => {
+        const r = btn.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) * 0.3;
+        const dy = (e.clientY - (r.top + r.height / 2)) * 0.3;
+        btn.style.transform = `translate(${dx}px, ${dy}px)`;
+      };
+      const onLeave = () => { btn.style.transform = ""; };
+      btn.addEventListener("mousemove", onMove);
+      btn.addEventListener("mouseleave", onLeave);
+      cleanup.push(() => {
+        btn.removeEventListener("mousemove", onMove);
+        btn.removeEventListener("mouseleave", onLeave);
+      });
+    });
+    return () => cleanup.forEach((fn) => fn());
   }, []);
 
   return (
@@ -958,6 +1032,7 @@ function App() {
   return (
     <div className="page-shell">
       <Cursor />
+      <NoiseOverlay />
       <div className="ambient ambient-a" />
       <div className="ambient ambient-b" />
       <header className="topbar">

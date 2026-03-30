@@ -43,6 +43,48 @@ a {
 
 /* ── Immersive layer ────────────────────────────────── */
 
+/* Film grain overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.032;
+  mix-blend-mode: screen;
+}
+
+/* Brand name glitch */
+@keyframes glitch {
+  0%, 88%, 100% { text-shadow: none; transform: none; }
+  89% { text-shadow: 2px 0 var(--gold), -2px 0 var(--sky); transform: skewX(-1.5deg); }
+  90% { text-shadow: -2px 0 var(--rose), 2px 0 var(--mint); transform: skewX(1.5deg); }
+  91% { text-shadow: none; transform: none; }
+  92% { text-shadow: 1px 0 var(--gold); transform: translateX(-1px); }
+  93% { text-shadow: none; transform: none; }
+}
+
+.brand {
+  animation: glitch 9s infinite;
+}
+
+/* Section kicker hover shimmer */
+@keyframes kicShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.section-kicker,
+.eyebrow {
+  background: linear-gradient(90deg, var(--gold) 0%, #ffe4a0 40%, var(--gold) 60%, #e8a840 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: kicShimmer 4s linear infinite;
+}
+
 /* Hide OS cursor on pointer-fine devices */
 @media (pointer: fine) {
   *, *::before, *::after { cursor: none !important; }
