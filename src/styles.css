@@ -100,37 +100,22 @@ a {
   pointer-events: none;
   z-index: 10000;
   will-change: transform;
-  /* transform is set by JS — only animate other properties */
-  transition: width 200ms ease, height 200ms ease, margin 200ms ease,
-              background 200ms ease, border-color 200ms ease, opacity 200ms ease;
+  /* No CSS transitions — all state handled by JS to avoid fighting with transform */
 }
 
 .cursor-dot {
   width: 8px;
   height: 8px;
-  margin: -4px 0 0 -4px;
   background: var(--gold);
+  opacity: 1;
+  transition: opacity 150ms ease;
 }
 
 .cursor-ring {
   width: 36px;
   height: 36px;
-  margin: -18px 0 0 -18px;
   border: 1.5px solid rgba(255, 196, 103, 0.5);
-}
-
-.cursor-dot[data-h="1"] {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
-.cursor-ring[data-h="1"] {
-  width: 52px;
-  height: 52px;
-  margin: -26px 0 0 -26px;
-  border-color: rgba(255, 196, 103, 0.85);
-  background: rgba(255, 196, 103, 0.06);
+  transition: width 150ms ease, height 150ms ease, border-color 150ms ease, background 150ms ease;
 }
 
 @media (pointer: coarse) {

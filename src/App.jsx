@@ -241,52 +241,65 @@ function NoiseOverlay() {
 function Cursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);
-  const mouse = useRef({ x: -200, y: -200 });
-  const pos = useRef({ x: -200, y: -200 });
-  const raf = useRef(null);
 
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
+    const S = { dot: 8, ring: 36, ringHover: 52 };
+    const s = { mx: -200, my: -200, rx: -200, ry: -200, hovered: false };
     const lerp = (a, b, n) => a + (b - a) * n;
+    let raf;
 
     const onMove = (e) => {
-      mouse.current = { x: e.clientX, y: e.clientY };
-      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      s.mx = e.clientX;
+      s.my = e.clientY;
+      dot.style.transform = `translate(${e.clientX - S.dot / 2}px, ${e.clientY - S.dot / 2}px)`;
       document.documentElement.style.setProperty("--mx", e.clientX + "px");
       document.documentElement.style.setProperty("--my", e.clientY + "px");
     };
 
     const tick = () => {
-      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.18);
-      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.18);
-      ring.style.transform = `translate(${pos.current.x}px, ${pos.current.y}px)`;
-      raf.current = requestAnimationFrame(tick);
+      s.rx = lerp(s.rx, s.mx, 0.18);
+      s.ry = lerp(s.ry, s.my, 0.18);
+      const sz = s.hovered ? S.ringHover : S.ring;
+      ring.style.transform = `translate(${s.rx - sz / 2}px, ${s.ry - sz / 2}px)`;
+      raf = requestAnimationFrame(tick);
     };
 
-    const onEnter = () => { dot.dataset.h = "1"; ring.dataset.h = "1"; };
-    const onLeave = () => { delete dot.dataset.h; delete ring.dataset.h; };
-
-    const attachHover = () => {
-      document.querySelectorAll("a, button").forEach((el) => {
-        el.addEventListener("mouseenter", onEnter);
-        el.addEventListener("mouseleave", onLeave);
-      });
+    const onEnter = () => {
+      s.hovered = true;
+      dot.style.opacity = "0";
+      ring.style.width = S.ringHover + "px";
+      ring.style.height = S.ringHover + "px";
+      ring.style.borderColor = "rgba(255,196,103,0.85)";
+      ring.style.background = "rgba(255,196,103,0.07)";
     };
+
+    const onLeave = () => {
+      s.hovered = false;
+      dot.style.opacity = "1";
+      ring.style.width = S.ring + "px";
+      ring.style.height = S.ring + "px";
+      ring.style.borderColor = "rgba(255,196,103,0.5)";
+      ring.style.background = "";
+    };
+
+    // Event delegation — no per-element listeners, no MutationObserver
+    const onOver = (e) => { if (e.target.closest("a,button")) onEnter(); };
+    const onOut  = (e) => { if (e.target.closest("a,button") && !e.relatedTarget?.closest("a,button")) onLeave(); };
 
     window.addEventListener("mousemove", onMove, { passive: true });
-    attachHover();
-    raf.current = requestAnimationFrame(tick);
-
-    const mo = new MutationObserver(attachHover);
-    mo.observe(document.body, { childList: true, subtree: true });
+    document.addEventListener("mouseover",  onOver);
+    document.addEventListener("mouseout",   onOut);
+    raf = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
-      cancelAnimationFrame(raf.current);
-      mo.disconnect();
+      document.removeEventListener("mouseover",  onOver);
+      document.removeEventListener("mouseout",   onOut);
+      cancelAnimationFrame(raf);
     };
   }, []);
 
