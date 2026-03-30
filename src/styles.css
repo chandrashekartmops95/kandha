@@ -85,42 +85,6 @@ a {
   animation: kicShimmer 4s linear infinite;
 }
 
-/* Hide OS cursor on pointer-fine devices */
-@media (pointer: fine) {
-  *, *::before, *::after { cursor: none !important; }
-}
-
-/* Custom cursor */
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10000;
-  will-change: transform;
-  /* No CSS transitions — all state handled by JS to avoid fighting with transform */
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--gold);
-  opacity: 1;
-  transition: opacity 150ms ease;
-}
-
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(255, 196, 103, 0.5);
-  transition: width 150ms ease, height 150ms ease, border-color 150ms ease, background 150ms ease;
-}
-
-@media (pointer: coarse) {
-  .cursor-dot, .cursor-ring { display: none; }
-}
 
 /* Scroll reveal */
 .reveal {
