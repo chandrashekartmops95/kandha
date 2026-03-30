@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Lenis from "lenis";
 
 const UX_CASE_STUDY_PATH = "/projects/my-nikkah-subscription-redesign";
 
@@ -221,7 +222,10 @@ const uxDecisions = [
   "Consistent typography and spacing improves readability across the journey",
 ];
 
+let _navigate = null;
+
 function navigateTo(path) {
+  if (_navigate) { _navigate(path); return; }
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
@@ -378,6 +382,34 @@ function HomePage({
     };
     const t = setTimeout(() => { rid = requestAnimationFrame(tick); }, 500);
     return () => { clearTimeout(t); cancelAnimationFrame(rid); el.textContent = original; };
+  }, []);
+
+  // 03 — Image depth parallax on project cards
+  useEffect(() => {
+    const cards = document.querySelectorAll(".project-card");
+    const cleanup = [];
+    cards.forEach((card) => {
+      const img = card.querySelector(".project-preview-image");
+      if (!img) return;
+      const onMove = (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        img.style.transition = "transform 0.08s linear";
+        img.style.transform = `scale(1.08) translate(${x * -14}px, ${y * -14}px)`;
+      };
+      const onLeave = () => {
+        img.style.transition = "transform 0.55s cubic-bezier(0.16,1,0.3,1)";
+        img.style.transform = "";
+      };
+      card.addEventListener("mousemove", onMove);
+      card.addEventListener("mouseleave", onLeave);
+      cleanup.push(() => {
+        card.removeEventListener("mousemove", onMove);
+        card.removeEventListener("mouseleave", onLeave);
+      });
+    });
+    return () => cleanup.forEach((fn) => fn());
   }, []);
 
   // Magnetic buttons
@@ -953,6 +985,7 @@ function App() {
   const [selectedImageByProject, setSelectedImageByProject] = useState(
     Object.fromEntries(projects.map((project) => [project.title, 0])),
   );
+  const transitionRef = useRef(null);
 
   useEffect(() => {
     const handlePopState = () => setPath(window.location.pathname);
@@ -960,11 +993,63 @@ function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
+  // 01 — Lenis smooth scroll
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    let rid;
+    const raf = (time) => { lenis.raf(time); rid = requestAnimationFrame(raf); };
+    rid = requestAnimationFrame(raf);
+    return () => { lenis.destroy(); cancelAnimationFrame(rid); };
+  }, []);
+
+  // 02 — Page transition
+  useEffect(() => {
+    const overlay = transitionRef.current;
+    _navigate = (newPath) => {
+      if (!overlay) {
+        window.history.pushState({}, "", newPath);
+        window.dispatchEvent(new PopStateEvent("popstate"));
+        return;
+      }
+      overlay.classList.add("t-in");
+      setTimeout(() => {
+        window.history.pushState({}, "", newPath);
+        window.dispatchEvent(new PopStateEvent("popstate"));
+        window.scrollTo(0, 0);
+        overlay.classList.remove("t-in");
+        overlay.classList.add("t-out");
+        setTimeout(() => overlay.classList.remove("t-out"), 540);
+      }, 520);
+    };
+    return () => { _navigate = null; };
+  }, []);
+
+  // 05 — Scroll progress bar
+  useEffect(() => {
+    const bar = document.querySelector(".scroll-bar");
+    const update = () => {
+      const max = document.body.scrollHeight - window.innerHeight;
+      if (bar && max > 0) bar.style.transform = `scaleX(${(window.scrollY / max).toFixed(4)})`;
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, [path]);
+
   useEffect(() => {
     const SELECTORS =
       ".intro-card,.project-card,.section-head,.contact-section,.case-card,.case-step-card,.user-journey-step,.case-media-card,.case-overview-text,.user-journey,.case-process,.ticker";
     let obs;
     const rid = requestAnimationFrame(() => {
+      // 04 — Section heading split-text
+      document.querySelectorAll(".section-head h2").forEach((h2) => {
+        if (h2.dataset.split) return;
+        h2.dataset.split = "1";
+        const words = h2.textContent.trim().split(/\s+/);
+        h2.innerHTML = words
+          .map((w, i) => `<span class="sw" style="--wi:${i}"><span>${w}</span></span>`)
+          .join(" ");
+      });
+
       const els = document.querySelectorAll(SELECTORS);
       obs = new IntersectionObserver(
         (entries) => {
@@ -997,6 +1082,8 @@ function App() {
 
   return (
     <div className="page-shell">
+      <div className="page-transition" ref={transitionRef} aria-hidden="true" />
+      <div className="scroll-bar" aria-hidden="true" />
       <IntroVeil />
       <NoiseOverlay />
       <div className="ambient ambient-a" />
