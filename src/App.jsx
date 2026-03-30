@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const UX_CASE_STUDY_PATH = "/projects/my-nikkah-subscription-redesign";
 
@@ -226,6 +226,68 @@ function navigateTo(path) {
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
+function Cursor() {
+  const dotRef = useRef(null);
+  const ringRef = useRef(null);
+  const mouse = useRef({ x: -200, y: -200 });
+  const pos = useRef({ x: -200, y: -200 });
+  const raf = useRef(null);
+
+  useEffect(() => {
+    const dot = dotRef.current;
+    const ring = ringRef.current;
+    if (!dot || !ring) return;
+
+    const lerp = (a, b, n) => a + (b - a) * n;
+
+    const onMove = (e) => {
+      mouse.current = { x: e.clientX, y: e.clientY };
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+      document.documentElement.style.setProperty("--mx", e.clientX + "px");
+      document.documentElement.style.setProperty("--my", e.clientY + "px");
+    };
+
+    const tick = () => {
+      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.09);
+      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.09);
+      ring.style.left = pos.current.x + "px";
+      ring.style.top = pos.current.y + "px";
+      raf.current = requestAnimationFrame(tick);
+    };
+
+    const onEnter = () => { dot.dataset.h = "1"; ring.dataset.h = "1"; };
+    const onLeave = () => { delete dot.dataset.h; delete ring.dataset.h; };
+
+    const attachHover = () => {
+      document.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("mouseenter", onEnter);
+        el.addEventListener("mouseleave", onLeave);
+      });
+    };
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    attachHover();
+    raf.current = requestAnimationFrame(tick);
+
+    const mo = new MutationObserver(attachHover);
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(raf.current);
+      mo.disconnect();
+    };
+  }, []);
+
+  return (
+    <>
+      <div className="cursor-dot" ref={dotRef} aria-hidden="true" />
+      <div className="cursor-ring" ref={ringRef} aria-hidden="true" />
+    </>
+  );
+}
+
 function MyNikkahPreview({ compact = false }) {
   return (
     <div className={`nikkah-mockup ${compact ? "is-compact" : ""}`}>
@@ -277,6 +339,36 @@ function HomePage({
   setOpenProject,
   setSelectedImageByProject,
 }) {
+  useEffect(() => {
+    const stage = document.querySelector(".hero-stage");
+    if (!stage) return;
+    const target = { rx: 0, ry: 0 };
+    const curr = { rx: 0, ry: 0 };
+    let rid;
+    const lerp = (a, b, n) => a + (b - a) * n;
+
+    const onMove = ({ clientX, clientY }) => {
+      const cx = clientX / window.innerWidth - 0.5;
+      const cy = clientY / window.innerHeight - 0.5;
+      target.rx = cy * -5;
+      target.ry = cx * 5;
+    };
+
+    const tick = () => {
+      curr.rx = lerp(curr.rx, target.rx, 0.05);
+      curr.ry = lerp(curr.ry, target.ry, 0.05);
+      stage.style.transform = `perspective(1200px) rotateX(${curr.rx}deg) rotateY(${curr.ry}deg)`;
+      rid = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    rid = requestAnimationFrame(tick);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(rid);
+    };
+  }, []);
+
   return (
     <>
       <section className="hero">
@@ -828,10 +920,44 @@ function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
+  useEffect(() => {
+    const SELECTORS =
+      ".intro-card,.project-card,.section-head,.contact-section,.case-card,.case-step-card,.user-journey-step,.case-media-card,.case-overview-text,.user-journey,.case-process,.ticker";
+    let obs;
+    const rid = requestAnimationFrame(() => {
+      const els = document.querySelectorAll(SELECTORS);
+      obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const siblings = Array.from(entry.target.parentElement?.children ?? []);
+              const i = siblings.indexOf(entry.target);
+              entry.target.style.setProperty("--i", Math.max(0, i));
+              entry.target.classList.add("in-view");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.06, rootMargin: "0px 0px -32px 0px" }
+      );
+      els.forEach((el) => {
+        if (!el.classList.contains("in-view")) {
+          el.classList.add("reveal");
+          obs.observe(el);
+        }
+      });
+    });
+    return () => {
+      cancelAnimationFrame(rid);
+      obs?.disconnect();
+    };
+  }, [path]);
+
   const isCaseStudyPage = path === UX_CASE_STUDY_PATH;
 
   return (
     <div className="page-shell">
+      <Cursor />
       <div className="ambient ambient-a" />
       <div className="ambient ambient-b" />
       <header className="topbar">

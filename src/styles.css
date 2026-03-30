@@ -25,11 +25,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(255, 164, 97, 0.18), transparent 25%),
-    radial-gradient(circle at 82% 18%, rgba(123, 163, 255, 0.18), transparent 28%),
-    radial-gradient(circle at 50% 80%, rgba(255, 116, 143, 0.14), transparent 25%),
-    linear-gradient(180deg, #08080a 0%, #0e0f14 35%, #08080b 100%);
+  background-color: #09090b;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.048) 1px, transparent 1px),
+    radial-gradient(circle at 14% 18%, rgba(255, 164, 97, 0.13), transparent 30%),
+    radial-gradient(circle at 80% 16%, rgba(123, 163, 255, 0.11), transparent 28%),
+    radial-gradient(circle at 50% 84%, rgba(255, 116, 143, 0.09), transparent 26%);
+  background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%;
   color: var(--text);
   font-family: "Manrope", sans-serif;
 }
@@ -39,9 +41,97 @@ a {
   text-decoration: none;
 }
 
+/* ── Immersive layer ────────────────────────────────── */
+
+/* Hide OS cursor on pointer-fine devices */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
+/* Custom cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  will-change: transform;
+  transition: width 220ms ease, height 220ms ease, margin 220ms ease,
+              background 220ms ease, border-color 220ms ease, opacity 220ms ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--gold);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid rgba(255, 196, 103, 0.5);
+}
+
+.cursor-dot[data-h="1"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.cursor-ring[data-h="1"] {
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-color: rgba(255, 196, 103, 0.85);
+  background: rgba(255, 196, 103, 0.06);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 0.07s);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero entrance animations */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Spotlight overlay */
 .page-shell {
   position: relative;
   overflow: hidden;
+}
+
+.page-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(
+    750px circle at var(--mx, 50vw) var(--my, 50vh),
+    rgba(255, 196, 103, 0.055),
+    transparent 65%
+  );
 }
 
 .ambient {
@@ -72,7 +162,7 @@ a {
 .topbar,
 main {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .topbar {
@@ -200,6 +290,14 @@ main {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.hero-copy > * {
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-copy .eyebrow       { animation-delay: 0.1s; }
+.hero-copy h1             { animation-delay: 0.25s; }
+.hero-copy .hero-text     { animation-delay: 0.4s; }
+.hero-copy .hero-actions  { animation-delay: 0.55s; }
+
 .hero-stage {
   position: relative;
   min-height: 32rem;
@@ -210,6 +308,9 @@ main {
     linear-gradient(180deg, rgba(255, 190, 103, 0.14), rgba(131, 164, 255, 0.1));
   box-shadow: var(--shadow);
   overflow: hidden;
+  transform-style: preserve-3d;
+  animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  will-change: transform;
 }
 
 .hero-stage-image {
@@ -472,9 +573,29 @@ main {
   --preview-pill-shadow-hover: 0 22px 48px rgba(0, 0, 0, 0.34), 0 0 0 1px rgba(255, 196, 103, 0.12), inset 0 1px 0 rgba(255, 248, 236, 0.12);
 }
 
+/* Wireframe grid reveal on hover (Process Reveal concept) */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image:
+    linear-gradient(rgba(255, 196, 103, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 196, 103, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0;
+  transition: opacity 450ms ease;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 196, 103, 0.18);
 }
 
 .project-card.is-open {
