@@ -254,17 +254,15 @@ function Cursor() {
 
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
-      dot.style.left = e.clientX + "px";
-      dot.style.top = e.clientY + "px";
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
       document.documentElement.style.setProperty("--mx", e.clientX + "px");
       document.documentElement.style.setProperty("--my", e.clientY + "px");
     };
 
     const tick = () => {
-      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.09);
-      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.09);
-      ring.style.left = pos.current.x + "px";
-      ring.style.top = pos.current.y + "px";
+      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.18);
+      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.18);
+      ring.style.transform = `translate(${pos.current.x}px, ${pos.current.y}px)`;
       raf.current = requestAnimationFrame(tick);
     };
 

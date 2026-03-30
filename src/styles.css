@@ -100,8 +100,9 @@ a {
   pointer-events: none;
   z-index: 10000;
   will-change: transform;
-  transition: width 220ms ease, height 220ms ease, margin 220ms ease,
-              background 220ms ease, border-color 220ms ease, opacity 220ms ease;
+  /* transform is set by JS — only animate other properties */
+  transition: width 200ms ease, height 200ms ease, margin 200ms ease,
+              background 200ms ease, border-color 200ms ease, opacity 200ms ease;
 }
 
 .cursor-dot {
