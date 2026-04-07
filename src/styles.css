@@ -2338,3 +2338,629 @@ main {
     font-size: 1.28rem;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PROJECT PAGES — shared (Brand Strategy + Commercial Impact)
+══════════════════════════════════════════════════════════════════════════════ */
+
+.project-page {
+  width: min(1180px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 5rem;
+}
+
+.project-page-header {
+  max-width: 72rem;
+  padding: 2rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3.5rem;
+}
+
+.project-page-header h1 {
+  margin: 0.75rem 0 1.25rem;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.project-page-lead {
+  max-width: 60ch;
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Approach section (Brand Strategy) ───────────────────────────── */
+
+.approach-section {
+  margin-bottom: 4rem;
+}
+
+.approach-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.approach-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  backdrop-filter: blur(16px);
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.approach-number {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: rgba(247, 241, 232, 0.28);
+  line-height: 1;
+}
+
+.approach-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.approach-card p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── Brand Strategy project list ─────────────────────────────────── */
+
+.bs-projects-section {
+  margin-bottom: 3rem;
+}
+
+.bs-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.bs-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 2rem;
+  border-radius: 1.8rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.bs-project::before {
+  content: "";
+  position: absolute;
+  inset: auto -15% -25% auto;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.bs-project-flip {
+  direction: rtl;
+}
+
+.bs-project-flip > * {
+  direction: ltr;
+}
+
+.bs-project-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bs-project-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.bs-project-subtitle {
+  margin: 0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(247, 241, 232, 0.5);
+}
+
+.bs-project-desc {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 48ch;
+}
+
+.bs-project-approach {
+  padding: 1.1rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bs-project-approach .section-kicker {
+  margin: 0;
+  font-size: 0.65rem;
+}
+
+.bs-approach-text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.bs-project-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bs-image-frame {
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: rgba(12, 12, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+}
+
+.bs-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  max-height: 28rem;
+  padding: 1rem;
+}
+
+.bs-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.bs-thumb-btn {
+  flex: 1;
+  min-width: 5rem;
+  max-width: 8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 180ms ease, opacity 180ms ease;
+  opacity: 0.55;
+}
+
+.bs-thumb-btn.is-active {
+  border-color: rgba(255, 196, 103, 0.5);
+  opacity: 1;
+}
+
+.bs-thumb-btn img {
+  width: 100%;
+  height: 4rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   COMMERCIAL IMPACT PAGE
+══════════════════════════════════════════════════════════════════════════════ */
+
+.ci-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ci-project {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.ci-project:last-child {
+  border-bottom: none;
+}
+
+.ci-project-meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ci-project-number {
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  color: rgba(247, 241, 232, 0.2);
+  line-height: 1;
+}
+
+.ci-project-category {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: rgba(247, 241, 232, 0.52);
+}
+
+.ci-project-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ci-project-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: sticky;
+  top: 6rem;
+}
+
+.ci-project-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.ci-project-brief {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+.ci-project-impact {
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ci-project-impact .section-kicker {
+  margin: 0;
+  font-size: 0.65rem;
+}
+
+.ci-impact-text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.ci-project-details {
+  margin: 0;
+  font-size: 0.94rem;
+  color: rgba(247, 241, 232, 0.6);
+  line-height: 1.65;
+}
+
+.ci-project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ci-hero-image-wrap {
+  width: 100%;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(12, 12, 16, 0.5);
+}
+
+.ci-hero-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 38rem;
+}
+
+.ci-support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  gap: 0.5rem;
+}
+
+.ci-thumb-btn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 180ms ease, opacity 180ms ease;
+  opacity: 0.5;
+  aspect-ratio: 4/3;
+}
+
+.ci-thumb-btn.is-active {
+  border-color: rgba(255, 196, 103, 0.5);
+  opacity: 1;
+}
+
+.ci-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Page footer CTA (shared) ────────────────────────────────────── */
+
+.page-footer-cta {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  border-radius: 1.8rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.page-footer-cta h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.page-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* ── Mobile mockups — fix horizontal overflow on small screens ───── */
+
+.mobile-mockups-wrap {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.phone-frame {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ── Accent glow on BS projects ────────────────────────────────────── */
+.bs-project.accent-gold::before  { background: var(--gold); }
+.bs-project.accent-rose::before  { background: var(--rose); }
+.bs-project.accent-mint::before  { background: var(--mint); }
+.bs-project.accent-sky::before   { background: var(--sky); }
+.bs-project.accent-ice::before   { background: var(--ice); }
+
+/* ── CI accent left border ──────────────────────────────────────────── */
+.ci-project.accent-gold { --ci-accent: var(--gold); }
+.ci-project.accent-rose { --ci-accent: var(--rose); }
+.ci-project.accent-mint { --ci-accent: var(--mint); }
+.ci-project.accent-sky  { --ci-accent: var(--sky); }
+.ci-project.accent-ice  { --ci-accent: var(--ice); }
+
+.ci-project-title {
+  color: var(--text);
+}
+
+/* ── Performance: reduce motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .brand,
+  .section-kicker,
+  .eyebrow,
+  .ticker-track,
+  .stage-orbit {
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .sw > span,
+  .section-head h2 .sw > span {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .intro-veil {
+    transition: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   MOBILE OVERRIDES FOR NEW PAGES  (max-width: 1080px)
+══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1080px) {
+  .approach-cards {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .bs-project {
+    grid-template-columns: 1fr;
+  }
+
+  .bs-project-flip {
+    direction: ltr;
+  }
+
+  .ci-project-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ci-project-copy {
+    position: static;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   MOBILE OVERRIDES FOR NEW PAGES  (max-width: 720px)
+══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 720px) {
+  .project-page {
+    width: min(100vw - 1rem, 1180px);
+    padding: 1.5rem 0 3.5rem;
+  }
+
+  .project-page-header {
+    padding: 1.25rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-page-header h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 0.94;
+  }
+
+  .project-page-lead {
+    font-size: 0.96rem;
+  }
+
+  .approach-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .approach-card {
+    padding: 1.1rem;
+  }
+
+  .approach-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .bs-projects-list {
+    gap: 2rem;
+  }
+
+  .bs-project {
+    padding: 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .bs-image-frame {
+    min-height: 14rem;
+  }
+
+  .bs-main-image {
+    max-height: 20rem;
+  }
+
+  .ci-project {
+    padding: 2rem 0;
+  }
+
+  .ci-project-number {
+    font-size: 2rem;
+  }
+
+  .ci-project-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .ci-hero-image {
+    max-height: 22rem;
+  }
+
+  .ci-support-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .page-footer-cta {
+    padding: 1.4rem;
+    margin-top: 2.5rem;
+  }
+
+  .page-footer-cta h2 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+
+  .page-footer-actions {
+    flex-direction: column;
+  }
+
+  .page-footer-actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Mobile mockups: scroll horizontally on very small screens */
+  .mobile-mockups-wrap {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    gap: 1.2rem;
+    scroll-padding-left: 0.5rem;
+  }
+
+  .mobile-mockups-section {
+    padding: 2rem 0;
+  }
+
+  /* case-showcase-mobile: portrait images in a 2-col grid */
+  .case-showcase-mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-showcase-mobile .case-media-card {
+    grid-column: span 1;
+  }
+
+  .case-showcase-mobile .case-media-card img {
+    object-fit: cover;
+    aspect-ratio: 9/16;
+  }
+}
